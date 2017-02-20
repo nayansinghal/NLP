@@ -1,7 +1,13 @@
 package nlp.lm;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringTokenizer;
 
 /** 
  *
@@ -145,6 +151,7 @@ public class POSTaggedFile {
 	    else 
 	    {
 		File[] dirFiles = file.listFiles();
+		Arrays.sort(dirFiles);
 		sentences.addAll(convertToTokenLists(dirFiles));
 	    }
 		
