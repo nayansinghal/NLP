@@ -1,0 +1,23 @@
+comm858863:java ns28844$ java -Xmx1024M nlp/lm/BidirectionalBigramModel /Users/ns28844/Documents/Language_Modelling/src/main/java/nlp/lm/data/atis/ 0.1 
+# Train Sentences = 519 (# words = 3922) 
+# Test Sentences = 58 (# words = 431)
+Training...
+Word Perplexity = 7.235173934082009
+Testing...
+Word Perplexity = 12.700210156018738
+
+comm858863:java ns28844$ java -Xmx1024M nlp/lm/BidirectionalBigramModel /Users/ns28844/Documents/Language_Modelling/src/main/java/nlp/lm/data/wsj/ 0.1 
+# Train Sentences = 43820 (# words = 995626) 
+# Test Sentences = 4869 (# words = 111718)
+Training...
+Word Perplexity = 46.51444509063141
+Testing...
+Word Perplexity = 126.1131573880389
+
+comm858863:java ns28844$ java -Xmx1024M nlp/lm/BidirectionalBigramModel /Users/ns28844/Documents/Language_Modelling/src/main/java/nlp/lm/data/brown/ 0.1 
+# Train Sentences = 47207 (# words = 1079440) 
+# Test Sentences = 5245 (# words = 93530)
+Training...
+Word Perplexity = 61.46886647115352
+Testing...
+Word Perplexity = 167.48711091425574
