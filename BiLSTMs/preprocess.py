@@ -28,6 +28,19 @@ class PreprocessData:
 		else:
 			raise Exception('Standard Split not Implemented for '+ self.dataset_type)
 
+
+	## Split data in the fraction user wants
+	def split_data(self, data, fraction):
+		split_index = int(fraction*len(data))
+		left_split = data[:split_index]
+		right_split = data[split_index:]
+		if not(left_split):
+			raise Exception('Fraction too small')
+		if not(right_split):
+			raise Exception('Fraction too big')
+		return left_split, right_split
+
+
 	@staticmethod
 	def isFeasibleStartingCharacter(c):
 		unfeasibleChars = '[]@\n'
@@ -37,6 +50,8 @@ class PreprocessData:
 	def get_unk_id(self, dic):
 		return len(dic)
 
+	## return dictionary length
+	## TODO: pass dictionary argument for calculating length
 	def get_pad_id(self, dic):
 		return len(self.vocabulary) + 1
 
@@ -73,15 +88,14 @@ class PreprocessData:
 						elif PreprocessData.isFeasibleStartingCharacter(token[0]):
 							wordPosPair = token.split('/')
 							if len(wordPosPair) == 2:
-								## get ids for word and pos tag
+								## get ids for word and pos tag from vocabulary and pos_tags dictionary
 								feature = self.get_id(wordPosPair[0], self.vocabulary, mode)
-								# include all pos tags.
+								# include all pos tags in pos_tags dictionary.
 								row.append((feature,self.get_id(wordPosPair[1],
 											self.pos_tags, 'train')))
 		if row:
 			matrix.append(row)
 		return matrix
-
 
 	## get all data files in given subdirectories of given directory
 	def preProcessDirectory(self, inDirectoryName, subDirNames=['*']):
@@ -101,15 +115,6 @@ class PreprocessData:
 			matrix.extend(self.processSingleFile(f, mode))
 		return matrix
 
-	def split_data(self, data, fraction):
-		split_index = int(fraction*len(data))
-		left_split = data[:split_index]
-		right_split = data[split_index:]
-		if not(left_split):
-			raise Exception('Fraction too small')
-		if not(right_split):
-			raise Exception('Fraction too big')
-		return left_split, right_split
 
 	## Get rid of sentences greater than max_size
 	## and pad the remaining if less than max_size
