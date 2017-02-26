@@ -66,6 +66,11 @@ class PreprocessData:
 				return self.get_unk_id(dic)
 		return dic[pos]
 
+	def containSuffix(word):
+		if word.endswith('ly'):
+			return 1
+		return 0
+
 	## Process single file to get raw data matrix
 	def processSingleFile(self, inFileName, mode):
 		matrix = []
@@ -91,7 +96,7 @@ class PreprocessData:
 								## get ids for word and pos tag from vocabulary and pos_tags dictionary
 								feature = self.get_id(wordPosPair[0], self.vocabulary, mode)
 								# include all pos tags in pos_tags dictionary.
-								row.append((feature,self.get_id(wordPosPair[1],
+								row.append((feature, self.get_id(wordPosPair[1], 
 											self.pos_tags, 'train')))
 		if row:
 			matrix.append(row)
