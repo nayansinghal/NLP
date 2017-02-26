@@ -16,6 +16,8 @@ BATCH_SIZE = 128
 VALIDATION_FREQUENCY = 10
 CHECKPOINT_FREQUENCY = 50
 NO_OF_EPOCHS = 6
+FEATURE_DIM = 1
+HIDDEN_FEATURE_DIM =1
 
 
 ## Model class is adatepd from model.py found here
@@ -27,16 +29,20 @@ class Model:
 		self._sequence_len = sequence_len
 		self._output_dim = output_dim
 		self._hidden_state_size = hidden_state_size
+		self._hidden_feature_dim = HIDDEN_FEATURE_DIM
 		self._optimizer = tf.train.AdamOptimizer(0.0005)
 
 	# Adapted from https://github.com/monikkinom/ner-lstm/blob/master/model.py __init__ function
 	def create_placeholders(self):
 		self._input_words = tf.placeholder(tf.int32, [BATCH_SIZE, self._sequence_len])
+		## TODO: create 2D tensor for other features
+		self._hot_feature = tf.placeholder(tf.int32, [BATCH_SIZE, self._sequence_len])
 		self._output_tags = tf.placeholder(tf.int32, [BATCH_SIZE, self._sequence_len])
 
-	def set_input_output(self, input_, output):
+	def set_input_output(self, input_, output, hot_feature):
 		self._input_words = input_
 		self._output_tags = output
+		self._hot_feature = hot_feature
 	
 	## Returns the mask that is 1 for the actual words
 	## and 0 for the padded part
@@ -50,9 +56,9 @@ class Model:
 
 	## Embed the large one hot input vector into a smaller space
 	## to make the lstm learning tractable
-	def get_embedding(self, input_):
+	def get_embedding(self, input_, input_dim, hidden_state_size):
 		embedding = tf.get_variable("embedding", 
-							[self._input_dim,self._hidden_state_size ], dtype=tf.float32)
+							[input_dim,hidden_state_size ], dtype=tf.float32)
 		return tf.nn.embedding_lookup(embedding,tf.cast(input_, tf.int32))
 
 	# Adapted from https://github.com/monikkinom/ner-lstm/blob/master/model.py __init__ function
@@ -60,24 +66,32 @@ class Model:
 		self.create_placeholders()
 
 		## Create forward and backward cell
-		forward_cell = tf.contrib.rnn.LSTMCell(self._hidden_state_size, state_is_tuple=True)
-		backward_cell = tf.contrib.rnn.LSTMCell(self._hidden_state_size, state_is_tuple=True)
-
-		## Since we are padding the input, we need to give
-		## the actual length of every instance in the batch
-		## so that the backward lstm works properly
-		## _output_tags are the actual tags for the sentences
-		self._mask, self._lengths = self.get_mask(self._output_tags, -1)
-		self._total_length = tf.reduce_sum(self._lengths)
-
-		self._oov_mask, self._oov_lengths = self.get_mask(self._input_words, self._input_dim-2)
-		self._oov_total_length = tf.reduce_sum(self._oov_lengths)
-
+		forward_cell = tf.contrib.rnn.LSTMCell(self._hidden_state_size + self._hidden_feature_dim, state_is_tuple=True)
+		backward_cell = tf.contrib.rnn.LSTMCell(self._hidden_state_size + self._hidden_feature_dim, state_is_tuple=True)
 
 		## Embedd the very large input vector into a smaller dimension
 		## This is for computational tractability
 		with tf.variable_scope("lstm_input"):
-			lstm_input = self.get_embedding(self._input_words)
+			lstm_input = self.get_embedding(self._input_words, self._input_dim, self._hidden_state_size)
+
+		self._hot_feature = tf.cast(self._hot_feature, tf.float32)
+		#self._hot_feature = self.get_embedding(self._hot_feature, 1, self._hidden_feature_dim)
+		#self._hot_feature = tf.reshape(self._hot_feature, [ BATCH_SIZE, MAX_LENGTH, 1])
+		#lstm_input = tf.concat([lstm_input, self._hot_feature], 2)
+
+
+		## Since we are padding the input, we need to give
+		## the actual length of every instance in the batch
+		## so that the backward lstm works properly
+
+		## _output_tags are the actual tags for the sentences
+		## Calculate the accuracy of the model
+		self._mask, self._lengths = self.get_mask(self._output_tags, -1)
+		self._total_length = tf.reduce_sum(self._lengths)
+
+		## Calculate the OOV accuracy of the model
+		self._oov_mask, self._oov_lengths = self.get_mask(self._input_words, self._input_dim-2)
+		self._oov_total_length = tf.reduce_sum(self._oov_lengths)
 		
 		## Apply bidrectional dyamic rnn to get a tuple of forward
 		## and backward outputs. Using dynamic rnn instead of just 
@@ -175,6 +189,10 @@ class Model:
 		return self._output_tags
 
 	@property
+	def hot_feature(self):
+		return self._hot_feature
+
+	@property
 	def loss(self):
 		return self._loss
 
@@ -215,14 +233,26 @@ def generate_epochs(X, y, no_of_epochs):
 		shuffle_data(X, y)
 		yield generate_batch(X, y)
 
+def segregate_word_hotfeatures(X):
+	wordId = []
+	hot_feature = []
+	for row in X:
+		wordId.append([tup[0] for tup in row])
+		hot_feature.append([tup[1] for tup in row])
+
+	return wordId, hot_feature
+
 ## Compute overall loss and accuracy on dev/test data
 def compute_summary_metrics(sess, m,sentence_words_val, sentence_tags_val):
 	loss, accuracy, total_len, oov_accuracy, oov_total_len = 0.0, 0.0, 0 , 0.0, 0
 	for i, epoch in enumerate(generate_epochs(sentence_words_val, sentence_tags_val, 1)):
 		for step, (X, y) in enumerate(epoch):
+
+			wordId, hot_feature = segregate_word_hotfeatures(X)
+
 			batch_loss, batch_accuracy, batch_len, oov_batch_accuracy, oov_batch_len = \
 			sess.run([m.loss, m.accuracy, m.total_length, m.oov_accuracy, m.oov_total_length], \
-					feed_dict={m.input_words:X, m.output_tags:y})
+					feed_dict={m.input_words:wordId, m.output_tags:y})
 			loss += batch_loss
 			accuracy += batch_accuracy
 			total_len += batch_len
@@ -267,22 +297,25 @@ def train(sentence_words_train, sentence_tags_train, sentence_words_val,
 	    for i, epoch in enumerate(generate_epochs(sentence_words_train, sentence_tags_train, NO_OF_EPOCHS)):
 	        start_time = time.time()
 	        for step, (X, y) in enumerate(epoch):
-				_, summary_value = sess.run([train_op, summary_op], feed_dict=
-										 {m.input_words:X, m.output_tags:y})
-				duration = time.time() - start_time
-				j += 1
-				if j % VALIDATION_FREQUENCY == 0:
-					val_loss, val_accuracy, val_oov_accuracy = compute_summary_metrics(sess, m, sentence_words_val, sentence_tags_val)
-					summary = tf.Summary()
-					summary.ParseFromString(summary_value)
-					summary.value.add(tag='Validation Loss', simple_value=val_loss)
-					summary.value.add(tag='Validation Accuracy', simple_value=val_accuracy)
-					summary.value.add(tag='OOV Accuracy', simple_value=val_oov_accuracy)
-					summary_writer.add_summary(summary, j)
-					log_string = '{} batches ====> Validation Accuracy {:.3f}, Validation Loss {:.3f}, OOV Accuracy {:.3f}'
-					print log_string.format(j, val_accuracy, val_loss, val_oov_accuracy)
-				else:
-					summary_writer.add_summary(summary_value, j)
+
+	        	wordId, hot_feature = segregate_word_hotfeatures(X)
+	
+	        	_, summary_value = sess.run([train_op, summary_op], feed_dict=
+										 {m.input_words:wordId, m.output_tags:y, m.hot_feature:hot_feature})
+	        	duration = time.time() - start_time
+	        	j += 1
+	        	if j % VALIDATION_FREQUENCY == 0:
+	        		val_loss, val_accuracy, val_oov_accuracy = compute_summary_metrics(sess, m, sentence_words_val, sentence_tags_val)
+	        		summary = tf.Summary()
+	        		summary.ParseFromString(summary_value)
+	        		summary.value.add(tag='Validation Loss', simple_value=val_loss)
+	        		summary.value.add(tag='Validation Accuracy', simple_value=val_accuracy)
+	        		summary.value.add(tag='OOV Accuracy', simple_value=val_oov_accuracy)
+	        		summary_writer.add_summary(summary, j)
+	        		log_string = '{} batches ====> Validation Accuracy {:.3f}, Validation Loss {:.3f}, OOV Accuracy {:.3f}'
+	        		print log_string.format(j, val_accuracy, val_loss, val_oov_accuracy)
+	        	else:
+	        		summary_writer.add_summary(summary_value, j)
 
 				if j % CHECKPOINT_FREQUENCY == 0:
 					checkpoint_path = os.path.join(train_dir, 'model.ckpt')
