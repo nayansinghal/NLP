@@ -40,9 +40,11 @@ class Model:
 	
 	## Returns the mask that is 1 for the actual words
 	## and 0 for the padded part
+	## Returns the mask that is 1 for the OOV words
+	## and 0 for the padded part
 	# Adapted from https://github.com/monikkinom/ner-lstm/blob/master/model.py __init__ function
-	def get_mask(self, t):
-		mask = tf.cast(tf.not_equal(t, -1), tf.int32)
+	def get_mask(self, t, check_value):
+		mask = tf.cast(tf.not_equal(t, check_value), tf.int32)
 		lengths = tf.reduce_sum(mask, reduction_indices=1)
 		return mask, lengths
 
@@ -64,8 +66,12 @@ class Model:
 		## Since we are padding the input, we need to give
 		## the actual length of every instance in the batch
 		## so that the backward lstm works properly
-		self._mask, self._lengths = self.get_mask(self._output_tags)
+		## _output_tags are the actual tags for the sentences
+		self._mask, self._lengths = self.get_mask(self._output_tags, -1)
 		self._total_length = tf.reduce_sum(self._lengths)
+
+		self._oov_mask, self._oov_lengths = self.get_mask(self._input_words, self._input_dim-2)
+		self._oov_total_length = tf.reduce_sum(self._oov_lengths)
 
 
 		## Embedd the very large input vector into a smaller dimension
@@ -102,6 +108,9 @@ class Model:
 		self._average_accuracy = self._accuracy/tf.cast(self._total_length, tf.float32)
 		self._average_loss = self._loss/tf.cast(self._total_length, tf.float32)
 
+		self._oov_accuracy = self.compute_accuracy( self._output_tags, self._probabilities, self._oov_mask)
+		self._average_oov_accuracy = self._oov_accuracy/tf.cast(self._oov_lengths, tf.float32)
+
 	# Taken from https://github.com/monikkinom/ner-lstm/blob/master/model.py weight_and_bias function
 	## Creates a fully connected layer with the given dimensions and parameters
 	def initialize_fc_layer(self, row_dim, col_dim, stddev=0.01, bias=0.1):
@@ -127,6 +136,7 @@ class Model:
 		tf.summary.scalar('Accuracy', self._average_accuracy)
 
 	# Taken from https://github.com/monikkinom/ner-lstm/blob/master/model.py __init__ function
+	# TODO: need to understand
 	def get_train_op(self, loss, global_step):
 		training_vars = tf.trainable_variables()
 		grads, _ = tf.clip_by_global_norm(tf.gradients(loss, training_vars), 10)
@@ -145,8 +155,10 @@ class Model:
 		return self.total_length
 
 	# Adapted from https://github.com/monikkinom/ner-lstm/blob/master/model.py cost function
+	## Calculate cross entropy 
 	def cost(self, pos_classes, probabilities):
 		pos_classes = tf.cast(pos_classes, tf.int32)
+		## convert the output into output_pos_tag
 		pos_one_hot = tf.one_hot(pos_classes, self._output_dim)
 		pos_one_hot = tf.cast(pos_one_hot, tf.float32)
 		## masking not needed since pos class vector will be zero for 
@@ -174,6 +186,14 @@ class Model:
 	def total_length(self):
 		return self._total_length
 
+	@property
+	def oov_accuracy(self):
+		return self._oov_accuracy
+
+	@property
+	def oov_total_length(self):
+		return self._oov_total_length
+
 # Adapted from http://r2rt.com/recurrent-neural-networks-in-tensorflow-i.html
 def generate_batch(X, y):
 	for i in xrange(0, len(X), BATCH_SIZE):
@@ -185,6 +205,7 @@ def shuffle_data(X, y):
 	return [X[num] for num in ran], [y[num] for num in ran]
 
 # Adapted from http://r2rt.com/recurrent-neural-networks-in-tensorflow-i.html
+## Generate random data
 def generate_epochs(X, y, no_of_epochs):
 	lx = len(X)
 	lx = (lx//BATCH_SIZE)*BATCH_SIZE
@@ -196,18 +217,21 @@ def generate_epochs(X, y, no_of_epochs):
 
 ## Compute overall loss and accuracy on dev/test data
 def compute_summary_metrics(sess, m,sentence_words_val, sentence_tags_val):
-	loss, accuracy, total_len = 0.0, 0.0, 0
+	loss, accuracy, total_len, oov_accuracy, oov_total_len = 0.0, 0.0, 0 , 0.0, 0
 	for i, epoch in enumerate(generate_epochs(sentence_words_val, sentence_tags_val, 1)):
 		for step, (X, y) in enumerate(epoch):
-			batch_loss, batch_accuracy, batch_len = \
-			sess.run([m.loss, m.accuracy, m.total_length], \
+			batch_loss, batch_accuracy, batch_len, oov_batch_accuracy, oov_batch_len = \
+			sess.run([m.loss, m.accuracy, m.total_length, m.oov_accuracy, m.oov_total_length], \
 					feed_dict={m.input_words:X, m.output_tags:y})
 			loss += batch_loss
 			accuracy += batch_accuracy
 			total_len += batch_len
+			oov_accuracy += oov_batch_accuracy
+			oov_total_len += oov_batch_len
 	loss = loss/total_len if total_len != 0 else 0
 	accuracy = accuracy/total_len if total_len != 0 else 1
-	return loss, accuracy
+	oov_accuracy = oov_accuracy/oov_total_len if oov_total_len != 0 else 1
+	return loss, accuracy, oov_accuracy
 
 ## train and test adapted from https://github.com/tensorflow/tensorflow/blob/master/tensorflow/
 ## models/image/cifar10/cifar10_train.py and cifar10_eval.py
@@ -248,14 +272,15 @@ def train(sentence_words_train, sentence_tags_train, sentence_words_val,
 				duration = time.time() - start_time
 				j += 1
 				if j % VALIDATION_FREQUENCY == 0:
-					val_loss, val_accuracy = compute_summary_metrics(sess, m, sentence_words_val, sentence_tags_val)
+					val_loss, val_accuracy, val_oov_accuracy = compute_summary_metrics(sess, m, sentence_words_val, sentence_tags_val)
 					summary = tf.Summary()
 					summary.ParseFromString(summary_value)
 					summary.value.add(tag='Validation Loss', simple_value=val_loss)
 					summary.value.add(tag='Validation Accuracy', simple_value=val_accuracy)
+					summary.value.add(tag='OOV Accuracy', simple_value=val_oov_accuracy)
 					summary_writer.add_summary(summary, j)
-					log_string = '{} batches ====> Validation Accuracy {:.3f}, Validation Loss {:.3f}'
-					print log_string.format(j, val_accuracy, val_loss)
+					log_string = '{} batches ====> Validation Accuracy {:.3f}, Validation Loss {:.3f}, OOV Accuracy {:.3f}'
+					print log_string.format(j, val_accuracy, val_loss, val_oov_accuracy)
 				else:
 					summary_writer.add_summary(summary_value, j)
 
@@ -310,6 +335,9 @@ if __name__ == '__main__':
 	X_train, y_train, _ = p.get_processed_data(train_mat, MAX_LENGTH)
 	X_val, y_val, _ = p.get_processed_data(val_mat, MAX_LENGTH)
 	X_test, y_test, _ = p.get_processed_data(test_mat, MAX_LENGTH)
+
+	print len(p.vocabulary)
+	print p.get_unk_id(p.vocabulary)
 
 	if experiment_type == 'train':
 		if os.path.exists(train_dir):
