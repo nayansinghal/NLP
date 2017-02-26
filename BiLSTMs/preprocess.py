@@ -1,5 +1,6 @@
 import glob
 from random import shuffle
+import operator
 
 MAX_LENGTH = 100
 
@@ -66,7 +67,7 @@ class PreprocessData:
 				return self.get_unk_id(dic)
 		return dic[pos]
 
-	def containSuffix(word):
+	def containSuffix(self, word):
 		if word.endswith('ly'):
 			return 1
 		return 0
@@ -95,8 +96,11 @@ class PreprocessData:
 							if len(wordPosPair) == 2:
 								## get ids for word and pos tag from vocabulary and pos_tags dictionary
 								feature = self.get_id(wordPosPair[0], self.vocabulary, mode)
+								suffix = self.containSuffix(wordPosPair[0])
 								# include all pos tags in pos_tags dictionary.
-								row.append((feature, self.get_id(wordPosPair[1], 
+								#row.append((feature, self.get_id(wordPosPair[1], 
+								#			self.pos_tags, 'train')))
+								row.append((feature, suffix, self.get_id(wordPosPair[1], 
 											self.pos_tags, 'train')))
 		if row:
 			matrix.append(row)
@@ -126,14 +130,19 @@ class PreprocessData:
 	def get_processed_data(self, mat, max_size):
 		X = []
 		y = []
+		list1 = [0,1]
+		my_items = operator.itemgetter(*list1)
+
 		original_len = len(mat)
 		mat = filter(lambda x: len(x) <= max_size, mat)
 		no_removed = original_len - len(mat)
 		for row in mat:
-			X_row = [tup[0] for tup in row]
-			y_row = [tup[1] for tup in row]
+			#X_row = [tup[0] for tup in row]
+			X_row = [my_items(tup) for tup in row]
+			y_row = [tup[2] for tup in row]
 			## padded words represented by len(vocab) + 1
-			X_row = X_row + [self.get_pad_id(self.vocabulary)]*(max_size - len(X_row))
+			#X_row = X_row + [self.get_pad_id(self.vocabulary)]*(max_size - len(X_row))
+			X_row = X_row + [[self.get_pad_id(self.vocabulary),2]]*(max_size - len(X_row))
 			## Padded pos tags represented by -1
 			y_row = y_row + [-1]*(max_size-len(y_row))
 			X.append(X_row)
