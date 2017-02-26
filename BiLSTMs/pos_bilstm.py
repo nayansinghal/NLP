@@ -305,10 +305,11 @@ def test(sentence_words_test, sentence_tags_test,
 				saver.restore(sess, ckpt.model_checkpoint_path)
 
 				global_step = ckpt.model_checkpoint_path.split('/')[-1].split('-')[-1]
-			test_loss, test_accuracy = compute_summary_metrics(sess, m, sentence_words_test,
+			test_loss, test_accuracy, test_oov_accuracy = compute_summary_metrics(sess, m, sentence_words_test,
 															   sentence_tags_test)
 			print 'Test Accuracy: {:.3f}'.format(test_accuracy)
 			print 'Test Loss: {:.3f}'.format(test_loss)
+			print 'Test OOV Accuracy: {:.3f}'.format(test_oov_accuracy)
 
 
 if __name__ == '__main__':
@@ -335,9 +336,6 @@ if __name__ == '__main__':
 	X_train, y_train, _ = p.get_processed_data(train_mat, MAX_LENGTH)
 	X_val, y_val, _ = p.get_processed_data(val_mat, MAX_LENGTH)
 	X_test, y_test, _ = p.get_processed_data(test_mat, MAX_LENGTH)
-
-	print len(p.vocabulary)
-	print p.get_unk_id(p.vocabulary)
 
 	if experiment_type == 'train':
 		if os.path.exists(train_dir):
