@@ -17,7 +17,7 @@ VALIDATION_FREQUENCY = 10
 CHECKPOINT_FREQUENCY = 50
 NO_OF_EPOCHS = 6
 FEATURE_DIM = 1
-HIDDEN_FEATURE_DIM =1
+HIDDEN_FEATURE_DIM =32
 
 
 ## Model class is adatepd from model.py found here
@@ -49,8 +49,13 @@ class Model:
 	## Returns the mask that is 1 for the OOV words
 	## and 0 for the padded part
 	# Adapted from https://github.com/monikkinom/ner-lstm/blob/master/model.py __init__ function
-	def get_mask(self, t, check_value):
-		mask = tf.cast(tf.not_equal(t, check_value), tf.int32)
+	def get_mask(self, t):
+		mask = tf.cast(tf.not_equal(t, -1), tf.int32)
+		lengths = tf.reduce_sum(mask, reduction_indices=1)
+		return mask, lengths
+
+	def get_oov_mask(self, t, value):
+		mask = tf.cast(tf.equal(t, value), tf.int32)
 		lengths = tf.reduce_sum(mask, reduction_indices=1)
 		return mask, lengths
 
@@ -74,10 +79,12 @@ class Model:
 		with tf.variable_scope("lstm_input"):
 			lstm_input = self.get_embedding(self._input_words, self._input_dim, self._hidden_state_size)
 
-		self._hot_feature = tf.cast(self._hot_feature, tf.float32)
-		#self._hot_feature = self.get_embedding(self._hot_feature, 1, self._hidden_feature_dim)
-		#self._hot_feature = tf.reshape(self._hot_feature, [ BATCH_SIZE, MAX_LENGTH, 1])
-		#lstm_input = tf.concat([lstm_input, self._hot_feature], 2)
+		hot_feature_lstm = tf.cast(self._hot_feature, tf.float32)
+		#hot_feature_lstm = self.get_embedding(self._hot_feature, 1, self._hidden_feature_dim)
+		#print hot_feature_lstm
+		hot_feature_lstm = tf.reshape(hot_feature_lstm, [ BATCH_SIZE, MAX_LENGTH, 1])
+		print hot_feature_lstm
+		lstm_input = tf.concat([lstm_input, hot_feature_lstm], 2)
 
 
 		## Since we are padding the input, we need to give
@@ -86,11 +93,11 @@ class Model:
 
 		## _output_tags are the actual tags for the sentences
 		## Calculate the accuracy of the model
-		self._mask, self._lengths = self.get_mask(self._output_tags, -1)
+		self._mask, self._lengths = self.get_mask(self._output_tags)
 		self._total_length = tf.reduce_sum(self._lengths)
 
 		## Calculate the OOV accuracy of the model
-		self._oov_mask, self._oov_lengths = self.get_mask(self._input_words, self._input_dim-2)
+		self._oov_mask, self._oov_lengths = self.get_oov_mask(self._input_words, self._input_dim-2)
 		self._oov_total_length = tf.reduce_sum(self._oov_lengths)
 		
 		## Apply bidrectional dyamic rnn to get a tuple of forward
@@ -252,7 +259,7 @@ def compute_summary_metrics(sess, m,sentence_words_val, sentence_tags_val):
 
 			batch_loss, batch_accuracy, batch_len, oov_batch_accuracy, oov_batch_len = \
 			sess.run([m.loss, m.accuracy, m.total_length, m.oov_accuracy, m.oov_total_length], \
-					feed_dict={m.input_words:wordId, m.output_tags:y})
+					feed_dict={m.input_words:wordId, m.output_tags:y, m.hot_feature:hot_feature})
 			loss += batch_loss
 			accuracy += batch_accuracy
 			total_len += batch_len
