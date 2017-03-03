@@ -17,7 +17,7 @@ VALIDATION_FREQUENCY = 10
 CHECKPOINT_FREQUENCY = 50
 NO_OF_EPOCHS = 6
 FEATURE_DIM = 1
-HIDDEN_FEATURE_DIM =32
+HIDDEN_FEATURE_DIM =40
 
 
 ## Model class is adatepd from model.py found here
@@ -82,7 +82,9 @@ class Model:
 		hot_feature_lstm = tf.cast(self._hot_feature, tf.float32)
 		#hot_feature_lstm = self.get_embedding(self._hot_feature, 1, self._hidden_feature_dim)
 		#print hot_feature_lstm
-		hot_feature_lstm = tf.reshape(hot_feature_lstm, [ BATCH_SIZE, MAX_LENGTH, 1])
+		hot_feature_lstm = tf.cast(hot_feature_lstm, tf.int32)
+		hot_feature_lstm = tf.one_hot(hot_feature_lstm, HIDDEN_FEATURE_DIM)
+		hot_feature_lstm = tf.cast(hot_feature_lstm, tf.float32)
 		print hot_feature_lstm
 		lstm_input = tf.concat([lstm_input, hot_feature_lstm], 2)
 
@@ -324,7 +326,8 @@ def train(sentence_words_train, sentence_tags_train, sentence_words_val,
 	        	else:
 	        		summary_writer.add_summary(summary_value, j)
 
-				if j % CHECKPOINT_FREQUENCY == 0:
+	        	#print 'reached for checking'
+	        	if j % CHECKPOINT_FREQUENCY == 0:
 					checkpoint_path = os.path.join(train_dir, 'model.ckpt')
 					saver.save(sess, checkpoint_path, global_step=j)
 
@@ -342,6 +345,8 @@ def test(sentence_words_test, sentence_tags_test,
 		with tf.Session() as sess:
 			ckpt = tf.train.get_checkpoint_state(train_dir)
 			if ckpt and ckpt.model_checkpoint_path:
+				print ckpt.model_checkpoint_path
+				#wait = input('enter: ')
 				saver.restore(sess, ckpt.model_checkpoint_path)
 
 				global_step = ckpt.model_checkpoint_path.split('/')[-1].split('-')[-1]
