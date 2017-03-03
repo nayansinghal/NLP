@@ -11,6 +11,21 @@ class PreprocessData:
 		self.pos_tags = {}
 		self.dataset_type = dataset_type
 
+		# suffix := 39
+		self.suffix_list = ['acy', 'al', 'nce', 'dom', 'nce', 'er', 'or', 'ism', 'ist', 'ty',
+							'ment', 'ness', 'ship', 'ion', 'ate', 'en', 'fy', 'ize', 'ise', 'ble', 'al',
+							'al', 'esque', 'ful', 'ic', 'ical', 'ous', 'ish', 'ive', 'less', 'y', 'ship',
+							'ary', 'hood', 'age', 'logy', 'ing', 's', 'es']
+
+	    # prefix := 71
+		self.prefix_list = ['a','an', 'ante', 'anti', 'auto', 'circum', 'be', 'circum', 'co', 'col', 'com',
+							'con', 'contra', 'contro', 'deca', 'de', 'dia', 'dis', 'di', 'en', 'ex', 'extra',
+							'fore', 'hecto', 'hemi', 'hetero', 'hexa', 'hepta', 'homo', 'homeo', 'hyper', 'il', 
+							'im', 'in', 'inter', 'ir', 'inter', 'intro', 'intra', 'kilo', 'mal', 'macro', 'micro',
+							'mid', 'mis', 'mono', 'multi', 'non', 'octo', 'omni', 'over', 'para', 'penta', 'post',
+							'poly', 'pre', 'pro', 're', 'retro', 'semi', 'sym', 'sub', 'super', 'syn', 'tele', 
+							'tetra', 'therm', 'trans', 'tri', 'un', 'uni']
+
 	## Get standard split for WSJ
 	def get_standard_split(self, files):
 		if self.dataset_type == 'wsj':
@@ -68,9 +83,11 @@ class PreprocessData:
 		return dic[pos]
 
 	def containSuffix(self, word):
-		if word.endswith('ly'):
-			return 1
-		return 0
+	## TODO: create hashmap for suffix_list for optimization
+		for i in range(0, len(self.suffix_list)):
+			if word.endswith(self.suffix_list[i]):
+				return i;
+		return len(self.suffix_list)
 
 	## Process single file to get raw data matrix
 	def processSingleFile(self, inFileName, mode):
