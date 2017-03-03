@@ -17,13 +17,13 @@ class PreprocessData:
 							'al', 'esque', 'ful', 'ic', 'ical', 'ous', 'ish', 'ive', 'less', 'y', 'ship',
 							'ary', 'hood', 'age', 'logy', 'ing', 's', 'es']
 
-	    # prefix := 71
-		self.prefix_list = ['a','an', 'ante', 'anti', 'auto', 'circum', 'be', 'circum', 'co', 'col', 'com',
-							'con', 'contra', 'contro', 'deca', 'de', 'dia', 'dis', 'di', 'en', 'ex', 'extra',
+	    # prefix := 69
+		self.prefix_list = ['a','an', 'ante', 'anti', 'auto', 'be', 'circum', 'col', 'com', 'contra',
+							'contro', 'con', 'co', 'deca', 'de', 'dia', 'dis', 'di', 'en', 'extra', 'ex',
 							'fore', 'hecto', 'hemi', 'hetero', 'hexa', 'hepta', 'homo', 'homeo', 'hyper', 'il', 
-							'im', 'in', 'inter', 'ir', 'inter', 'intro', 'intra', 'kilo', 'mal', 'macro', 'micro',
+							'im', 'inter', 'ir', 'intro', 'intra', 'in', 'kilo', 'mal', 'macro', 'micro',
 							'mid', 'mis', 'mono', 'multi', 'non', 'octo', 'omni', 'over', 'para', 'penta', 'post',
-							'poly', 'pre', 'pro', 're', 'retro', 'semi', 'sym', 'sub', 'super', 'syn', 'tele', 
+							'poly', 'pre', 'pro', 'retro', 're', 'semi', 'sym', 'sub', 'super', 'syn', 'tele', 
 							'tetra', 'therm', 'trans', 'tri', 'un', 'uni']
 
 	## Get standard split for WSJ
@@ -67,9 +67,8 @@ class PreprocessData:
 		return len(dic)
 
 	## return dictionary length
-	## TODO: pass dictionary argument for calculating length
 	def get_pad_id(self, dic):
-		return len(self.vocabulary) + 1
+		return len(dic) + 1
 
 	## get id of given token(pos) from dictionary dic.
 	## if not in dic, extend the dic if in train mode
@@ -82,12 +81,40 @@ class PreprocessData:
 				return self.get_unk_id(dic)
 		return dic[pos]
 
+	## get id of given word from prefix dic.
+	def containPrefix(self, word):
+	## TODO: create hashmap for suffix_list for optimization
+		for i in range(0, len(self.prefix_list)):
+			if word.lower().endswith(self.prefix_list[i]):
+				return i;
+		return len(self.prefix_list)
+
+	## get id of given word from suffix dic.
 	def containSuffix(self, word):
 	## TODO: create hashmap for suffix_list for optimization
 		for i in range(0, len(self.suffix_list)):
-			if word.endswith(self.suffix_list[i]):
+			if word.lower().startswith(self.suffix_list[i]):
 				return i;
 		return len(self.suffix_list)
+
+	def containHyphen(self, word):
+		if '-' in word:
+			return 1
+		return 0
+
+	def startWithDigit(self, word):
+		if word:
+			if word[0].isdigit():
+				return 1
+
+		return 0
+
+	def startWithCapital(self, word):
+		if word:
+			if word[0].isupper():
+				return 1
+
+		return 0
 
 	## Process single file to get raw data matrix
 	def processSingleFile(self, inFileName, mode):
@@ -113,11 +140,15 @@ class PreprocessData:
 							if len(wordPosPair) == 2:
 								## get ids for word and pos tag from vocabulary and pos_tags dictionary
 								feature = self.get_id(wordPosPair[0], self.vocabulary, mode)
+								prefix = self.containPrefix(wordPosPair[0])
 								suffix = self.containSuffix(wordPosPair[0])
+								startWithCapital = self.startWithCapital(wordPosPair[0])
+								startWithDigit = self.startWithDigit(wordPosPair[0])
+								hyphen = self.containHyphen(wordPosPair[0])
 								# include all pos tags in pos_tags dictionary.
 								#row.append((feature, self.get_id(wordPosPair[1], 
 								#			self.pos_tags, 'train')))
-								row.append((feature, suffix, self.get_id(wordPosPair[1], 
+								row.append((feature, prefix, suffix, startWithCapital, startWithDigit, hyphen, self.get_id(wordPosPair[1], 
 											self.pos_tags, 'train')))
 		if row:
 			matrix.append(row)
@@ -147,19 +178,27 @@ class PreprocessData:
 	def get_processed_data(self, mat, max_size):
 		X = []
 		y = []
-		list1 = [0,1]
+		list1 = [0,1,2,3,4,5]
 		my_items = operator.itemgetter(*list1)
 
 		original_len = len(mat)
 		mat = filter(lambda x: len(x) <= max_size, mat)
 		no_removed = original_len - len(mat)
+
+		vocabulary_pad_id = self.get_pad_id(self.vocabulary)
+		suffix_pad_id = self.get_pad_id(self.suffix_list)
+		prefix_pad_id = self.get_pad_id(self.prefix_list)
+		startWithDigit_pad_id = 2
+		startWithCapital_pad_id = 2
+		hyphen_pad_id = 2
+
 		for row in mat:
 			#X_row = [tup[0] for tup in row]
 			X_row = [my_items(tup) for tup in row]
-			y_row = [tup[2] for tup in row]
+			y_row = [tup[6] for tup in row]
 			## padded words represented by len(vocab) + 1
 			#X_row = X_row + [self.get_pad_id(self.vocabulary)]*(max_size - len(X_row))
-			X_row = X_row + [[self.get_pad_id(self.vocabulary),2]]*(max_size - len(X_row))
+			X_row = X_row + [[vocabulary_pad_id, prefix_pad_id, suffix_pad_id, startWithDigit_pad_id, startWithCapital_pad_id, hyphen_pad_id]]*(max_size - len(X_row))
 			## Padded pos tags represented by -1
 			y_row = y_row + [-1]*(max_size-len(y_row))
 			X.append(X_row)
