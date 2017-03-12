@@ -1,0 +1,78 @@
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Tensor("lstm_output/concat:0", shape=(128, 100, 600), dtype=float32)
+Tensor("lstm_output/concat_1:0", shape=(128, 100, 721), dtype=float32)
+10 batches ====> Validation Accuracy 0.135, Validation Loss 3.706, OOV Accuracy 0.108, Training time 21.591
+20 batches ====> Validation Accuracy 0.148, Validation Loss 3.058, OOV Accuracy 0.242, Training time 55.217
+30 batches ====> Validation Accuracy 0.154, Validation Loss 2.996, OOV Accuracy 0.229, Training time 82.267
+40 batches ====> Validation Accuracy 0.155, Validation Loss 2.972, OOV Accuracy 0.232, Training time 109.294
+50 batches ====> Validation Accuracy 0.159, Validation Loss 2.955, OOV Accuracy 0.233, Training time 136.331
+60 batches ====> Validation Accuracy 0.161, Validation Loss 2.931, OOV Accuracy 0.232, Training time 165.251
+70 batches ====> Validation Accuracy 0.163, Validation Loss 2.917, OOV Accuracy 0.231, Training time 193.263
+80 batches ====> Validation Accuracy 0.184, Validation Loss 2.868, OOV Accuracy 0.237, Training time 220.319
+90 batches ====> Validation Accuracy 0.243, Validation Loss 2.812, OOV Accuracy 0.236, Training time 247.285
+100 batches ====> Validation Accuracy 0.337, Validation Loss 2.707, OOV Accuracy 0.231, Training time 274.301
+110 batches ====> Validation Accuracy 0.347, Validation Loss 2.544, OOV Accuracy 0.237, Training time 303.277
+120 batches ====> Validation Accuracy 0.351, Validation Loss 2.356, OOV Accuracy 0.235, Training time 330.327
+130 batches ====> Validation Accuracy 0.406, Validation Loss 2.184, OOV Accuracy 0.235, Training time 357.345
+140 batches ====> Validation Accuracy 0.429, Validation Loss 2.038, OOV Accuracy 0.271, Training time 384.446
+150 batches ====> Validation Accuracy 0.478, Validation Loss 1.903, OOV Accuracy 0.338, Training time 411.530
+160 batches ====> Validation Accuracy 0.526, Validation Loss 1.766, OOV Accuracy 0.369, Training time 440.311
+170 batches ====> Validation Accuracy 0.552, Validation Loss 1.624, OOV Accuracy 0.330, Training time 467.317
+180 batches ====> Validation Accuracy 0.617, Validation Loss 1.473, OOV Accuracy 0.377, Training time 494.323
+190 batches ====> Validation Accuracy 0.663, Validation Loss 1.340, OOV Accuracy 0.417, Training time 521.375
+200 batches ====> Validation Accuracy 0.723, Validation Loss 1.196, OOV Accuracy 0.536, Training time 548.439
+210 batches ====> Validation Accuracy 0.757, Validation Loss 1.067, OOV Accuracy 0.525, Training time 577.372
+220 batches ====> Validation Accuracy 0.801, Validation Loss 0.945, OOV Accuracy 0.583, Training time 604.394
+230 batches ====> Validation Accuracy 0.825, Validation Loss 0.834, OOV Accuracy 0.589, Training time 631.502
+240 batches ====> Validation Accuracy 0.850, Validation Loss 0.734, OOV Accuracy 0.561, Training time 658.465
+250 batches ====> Validation Accuracy 0.869, Validation Loss 0.648, OOV Accuracy 0.584, Training time 685.458
+260 batches ====> Validation Accuracy 0.883, Validation Loss 0.574, OOV Accuracy 0.593, Training time 714.227
+270 batches ====> Validation Accuracy 0.892, Validation Loss 0.507, OOV Accuracy 0.593, Training time 741.162
+280 batches ====> Validation Accuracy 0.902, Validation Loss 0.453, OOV Accuracy 0.605, Training time 768.109
+290 batches ====> Validation Accuracy 0.911, Validation Loss 0.407, OOV Accuracy 0.616, Training time 795.171
+300 batches ====> Validation Accuracy 0.916, Validation Loss 0.369, OOV Accuracy 0.593, Training time 822.230
+310 batches ====> Validation Accuracy 0.924, Validation Loss 0.338, OOV Accuracy 0.608, Training time 851.238
+320 batches ====> Validation Accuracy 0.926, Validation Loss 0.311, OOV Accuracy 0.600, Training time 878.278
+330 batches ====> Validation Accuracy 0.932, Validation Loss 0.286, OOV Accuracy 0.610, Training time 905.302
+340 batches ====> Validation Accuracy 0.936, Validation Loss 0.268, OOV Accuracy 0.619, Training time 932.264
+350 batches ====> Validation Accuracy 0.939, Validation Loss 0.251, OOV Accuracy 0.635, Training time 959.247
+360 batches ====> Validation Accuracy 0.939, Validation Loss 0.240, OOV Accuracy 0.597, Training time 988.209
+370 batches ====> Validation Accuracy 0.941, Validation Loss 0.230, OOV Accuracy 0.612, Training time 1015.217
+380 batches ====> Validation Accuracy 0.944, Validation Loss 0.220, OOV Accuracy 0.621, Training time 1042.186
+390 batches ====> Validation Accuracy 0.945, Validation Loss 0.213, OOV Accuracy 0.624, Training time 1069.162
+400 batches ====> Validation Accuracy 0.946, Validation Loss 0.205, OOV Accuracy 0.616, Training time 1096.189
+410 batches ====> Validation Accuracy 0.947, Validation Loss 0.200, OOV Accuracy 0.622, Training time 1125.152
+420 batches ====> Validation Accuracy 0.947, Validation Loss 0.196, OOV Accuracy 0.611, Training time 1152.158
+430 batches ====> Validation Accuracy 0.950, Validation Loss 0.189, OOV Accuracy 0.617, Training time 1179.182
+440 batches ====> Validation Accuracy 0.950, Validation Loss 0.188, OOV Accuracy 0.612, Training time 1206.216
+450 batches ====> Validation Accuracy 0.951, Validation Loss 0.181, OOV Accuracy 0.616, Training time 1233.253
+460 batches ====> Validation Accuracy 0.951, Validation Loss 0.180, OOV Accuracy 0.620, Training time 1262.177
+470 batches ====> Validation Accuracy 0.952, Validation Loss 0.175, OOV Accuracy 0.621, Training time 1289.180
+480 batches ====> Validation Accuracy 0.952, Validation Loss 0.173, OOV Accuracy 0.613, Training time 1316.180
+490 batches ====> Validation Accuracy 0.951, Validation Loss 0.173, OOV Accuracy 0.615, Training time 1343.187
+500 batches ====> Validation Accuracy 0.953, Validation Loss 0.169, OOV Accuracy 0.621, Training time 1370.143
+510 batches ====> Validation Accuracy 0.953, Validation Loss 0.168, OOV Accuracy 0.618, Training time 1399.045
+520 batches ====> Validation Accuracy 0.953, Validation Loss 0.167, OOV Accuracy 0.606, Training time 1426.151
+530 batches ====> Validation Accuracy 0.953, Validation Loss 0.167, OOV Accuracy 0.615, Training time 1453.185
+540 batches ====> Validation Accuracy 0.953, Validation Loss 0.166, OOV Accuracy 0.612, Training time 1480.185
+550 batches ====> Validation Accuracy 0.954, Validation Loss 0.162, OOV Accuracy 0.620, Training time 1507.227
+560 batches ====> Validation Accuracy 0.954, Validation Loss 0.163, OOV Accuracy 0.612, Training time 1536.115
+570 batches ====> Validation Accuracy 0.953, Validation Loss 0.163, OOV Accuracy 0.591, Training time 1563.170
+580 batches ====> Validation Accuracy 0.955, Validation Loss 0.160, OOV Accuracy 0.618, Training time 1590.170
+590 batches ====> Validation Accuracy 0.955, Validation Loss 0.157, OOV Accuracy 0.615, Training time 1617.171
+600 batches ====> Validation Accuracy 0.955, Validation Loss 0.159, OOV Accuracy 0.603, Training time 1644.186
+610 batches ====> Validation Accuracy 0.955, Validation Loss 0.156, OOV Accuracy 0.616, Training time 1673.109
+620 batches ====> Validation Accuracy 0.955, Validation Loss 0.158, OOV Accuracy 0.594, Training time 1700.068
+630 batches ====> Validation Accuracy 0.956, Validation Loss 0.154, OOV Accuracy 0.618, Training time 1727.002
+640 batches ====> Validation Accuracy 0.955, Validation Loss 0.157, OOV Accuracy 0.596, Training time 1753.965
+650 batches ====> Validation Accuracy 0.955, Validation Loss 0.157, OOV Accuracy 0.612, Training time 1780.948
+660 batches ====> Validation Accuracy 0.954, Validation Loss 0.159, OOV Accuracy 0.591, Training time 1809.876
+670 batches ====> Validation Accuracy 0.956, Validation Loss 0.155, OOV Accuracy 0.618, Training time 1836.844
+680 batches ====> Validation Accuracy 0.956, Validation Loss 0.154, OOV Accuracy 0.602, Training time 1863.891
+690 batches ====> Validation Accuracy 0.954, Validation Loss 0.157, OOV Accuracy 0.587, Training time 1890.862
+700 batches ====> Validation Accuracy 0.956, Validation Loss 0.152, OOV Accuracy 0.619, Training time 1917.873
