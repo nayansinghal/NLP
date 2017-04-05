@@ -1,0 +1,2132 @@
+/u/nayans/NLP/output/set1/2000_seed.conllx contains sentences: 2000
+/u/nayans/NLP/data/brown_train.conllx contains sentences: 21821
+/u/nayans/NLP/output/set1/2000_selfTrain.conllx contains sentences: 21821
+/u/nayans/NLP/data/wsj_test.conllx contains sentences: 1981
+/u/nayans/NLP/data/brown_test.conllx contains sentences: 2421
+Train File: /u/nayans/NLP/output/set1/2000_seed.conllx
+Dev File: null
+Model File: /u/nayans/NLP/output/set1/2000_model
+Embedding File: penn-dependencybank/en-cw.txt
+Pre-trained Model File: null
+################### Train
+#Trees: 2000
+0 tree(s) are illegal (0.00%).
+0 tree(s) are legal but have multiple roots (0.00%).
+8 tree(s) are legal but not projective (0.40%).
+###################
+#Word: 8148
+#POS:48
+#Label: 44
+###################
+#Transitions: 87
+#Labels: 43
+ROOTLABEL: root
+Random generator initialized with seed 1490931715022
+Embedding File penn-dependencybank/en-cw.txt: #Words = 130000, dim = 50
+Scaling word embeddings:(mean = -0.02, std = 1.06) -> (mean = 0.00, std = 1.00)Found embeddings: 7085 / 8148
+###################
+Generate training examples...
+1000 
+class edu.stanford.nlp.parser.nndep.DependencyParser
+#Train Examples: 95346
+###################
+language = UniversalEnglish
+trainingThreads = 1
+wordCutOff = 1
+initRange = 0.010
+maxIter = 200
+batchSize = 10000
+adaEps = 1.0e-06
+adaAlpha = 0.010
+regParameter = 1.0e-08
+dropProb = 0.50
+hiddenSize = 200
+embeddingSize = 50
+numPreComputed = 100000
+evalPerIter = 100
+clearGradientsPerIter = 0
+saveItermediate = true
+unlabeled = false
+cPOS = false
+noPunc = true
+doWordEmbeddingGradUpdate = true
+##### Iteration 0
+Percent actually necessary to pre-compute: 23.853000%
+PreComputed 23853, Elapsed Time: 0.295 (s)
+Cost = 3.814270719433308, Correct(%) = 0.15789999999999893
+Elapsed Time: 2.467 (s)
+##### Iteration 1
+Percent actually necessary to pre-compute: 23.858000%
+PreComputed 23858, Elapsed Time: 0.283 (s)
+Cost = 3.820422236882831, Correct(%) = 0.19589999999999475
+Elapsed Time: 3.921 (s)
+##### Iteration 2
+Percent actually necessary to pre-compute: 23.932000%
+PreComputed 23932, Elapsed Time: 0.267 (s)
+Cost = 3.8355011051990426, Correct(%) = 0.30839999999998235
+Elapsed Time: 5.363 (s)
+##### Iteration 3
+Percent actually necessary to pre-compute: 23.947001%
+PreComputed 23947, Elapsed Time: 0.302 (s)
+Cost = 3.827721402731409, Correct(%) = 0.42909999999996906
+Elapsed Time: 6.778 (s)
+##### Iteration 4
+Percent actually necessary to pre-compute: 23.952000%
+PreComputed 23952, Elapsed Time: 0.311 (s)
+Cost = 3.8161983811532516, Correct(%) = 0.49909999999996135
+Elapsed Time: 8.153 (s)
+##### Iteration 5
+Percent actually necessary to pre-compute: 23.861000%
+PreComputed 23861, Elapsed Time: 0.263 (s)
+Cost = 3.819221490064709, Correct(%) = 0.5192999999999591
+Elapsed Time: 9.542 (s)
+##### Iteration 6
+Percent actually necessary to pre-compute: 23.781000%
+PreComputed 23781, Elapsed Time: 0.264 (s)
+Cost = 3.8119220837255177, Correct(%) = 0.5255999999999584
+Elapsed Time: 10.952 (s)
+##### Iteration 7
+Percent actually necessary to pre-compute: 24.060000%
+PreComputed 24060, Elapsed Time: 0.248 (s)
+Cost = 3.6821474073648406, Correct(%) = 0.5253999999999585
+Elapsed Time: 12.28 (s)
+##### Iteration 8
+Percent actually necessary to pre-compute: 23.977000%
+PreComputed 23977, Elapsed Time: 0.328 (s)
+Cost = 3.0954471897707196, Correct(%) = 0.5215999999999589
+Elapsed Time: 13.663 (s)
+##### Iteration 9
+Percent actually necessary to pre-compute: 23.889001%
+PreComputed 23889, Elapsed Time: 0.264 (s)
+Cost = 2.811787352119316, Correct(%) = 0.5255999999999584
+Elapsed Time: 15.13 (s)
+##### Iteration 10
+Percent actually necessary to pre-compute: 23.766001%
+PreComputed 23766, Elapsed Time: 0.286 (s)
+Cost = 2.920746178049437, Correct(%) = 0.45459999999996625
+Elapsed Time: 16.556 (s)
+##### Iteration 11
+Percent actually necessary to pre-compute: 24.000999%
+PreComputed 24001, Elapsed Time: 0.263 (s)
+Cost = 2.368788459618744, Correct(%) = 0.5211999999999589
+Elapsed Time: 17.879 (s)
+##### Iteration 12
+Percent actually necessary to pre-compute: 23.975000%
+PreComputed 23975, Elapsed Time: 0.303 (s)
+Cost = 2.2586332339211306, Correct(%) = 0.5333999999999576
+Elapsed Time: 19.258 (s)
+##### Iteration 13
+Percent actually necessary to pre-compute: 23.988000%
+PreComputed 23988, Elapsed Time: 0.319 (s)
+Cost = 2.1297886464030125, Correct(%) = 0.5613999999999545
+Elapsed Time: 20.672 (s)
+##### Iteration 14
+Percent actually necessary to pre-compute: 23.885000%
+PreComputed 23885, Elapsed Time: 0.3 (s)
+Cost = 2.0082244567819574, Correct(%) = 0.5630999999999543
+Elapsed Time: 22.125 (s)
+##### Iteration 15
+Percent actually necessary to pre-compute: 23.837000%
+PreComputed 23837, Elapsed Time: 0.264 (s)
+Cost = 1.9910329264218942, Correct(%) = 0.5489999999999559
+Elapsed Time: 23.518 (s)
+##### Iteration 16
+Percent actually necessary to pre-compute: 24.015000%
+PreComputed 24015, Elapsed Time: 0.259 (s)
+Cost = 1.7113774474317092, Correct(%) = 0.5990999999999503
+Elapsed Time: 24.853 (s)
+##### Iteration 17
+Percent actually necessary to pre-compute: 24.078000%
+PreComputed 24078, Elapsed Time: 0.31 (s)
+Cost = 1.6239300136671995, Correct(%) = 0.6180999999999482
+Elapsed Time: 26.258 (s)
+##### Iteration 18
+Percent actually necessary to pre-compute: 24.162000%
+PreComputed 24162, Elapsed Time: 0.263 (s)
+Cost = 1.5801033521114942, Correct(%) = 0.6181999999999482
+Elapsed Time: 27.668 (s)
+##### Iteration 19
+Percent actually necessary to pre-compute: 24.058001%
+PreComputed 24058, Elapsed Time: 0.26 (s)
+Cost = 1.4720639870438532, Correct(%) = 0.6465999999999451
+Elapsed Time: 29.055 (s)
+##### Iteration 20
+Percent actually necessary to pre-compute: 23.918000%
+PreComputed 23918, Elapsed Time: 0.271 (s)
+Cost = 1.4147250891460263, Correct(%) = 0.6419999999999456
+Elapsed Time: 30.462 (s)
+##### Iteration 21
+Percent actually necessary to pre-compute: 23.972000%
+PreComputed 23972, Elapsed Time: 0.267 (s)
+Cost = 1.4102985302926276, Correct(%) = 0.6411999999999457
+Elapsed Time: 31.797 (s)
+##### Iteration 22
+Percent actually necessary to pre-compute: 24.172001%
+PreComputed 24172, Elapsed Time: 0.321 (s)
+Cost = 1.3035199758584632, Correct(%) = 0.6610999999999435
+Elapsed Time: 33.228 (s)
+##### Iteration 23
+Percent actually necessary to pre-compute: 23.886000%
+PreComputed 23886, Elapsed Time: 0.265 (s)
+Cost = 1.2335333564931994, Correct(%) = 0.6810999999999413
+Elapsed Time: 34.661 (s)
+##### Iteration 24
+Percent actually necessary to pre-compute: 24.043000%
+PreComputed 24043, Elapsed Time: 0.265 (s)
+Cost = 1.1700600662134861, Correct(%) = 0.6898999999999403
+Elapsed Time: 36.034 (s)
+##### Iteration 25
+Percent actually necessary to pre-compute: 23.689000%
+PreComputed 23689, Elapsed Time: 0.274 (s)
+Cost = 1.167975651113677, Correct(%) = 0.6902999999999403
+Elapsed Time: 37.462 (s)
+##### Iteration 26
+Percent actually necessary to pre-compute: 23.923001%
+PreComputed 23923, Elapsed Time: 0.319 (s)
+Cost = 1.1125655841363558, Correct(%) = 0.702499999999939
+Elapsed Time: 38.862 (s)
+##### Iteration 27
+Percent actually necessary to pre-compute: 24.018000%
+PreComputed 24018, Elapsed Time: 0.263 (s)
+Cost = 1.0879835470305927, Correct(%) = 0.7066999999999385
+Elapsed Time: 40.256 (s)
+##### Iteration 28
+Percent actually necessary to pre-compute: 23.955999%
+PreComputed 23956, Elapsed Time: 0.262 (s)
+Cost = 1.0091427416431984, Correct(%) = 0.7242999999999366
+Elapsed Time: 41.654 (s)
+##### Iteration 29
+Percent actually necessary to pre-compute: 24.072000%
+PreComputed 24072, Elapsed Time: 0.276 (s)
+Cost = 0.9811560872911249, Correct(%) = 0.7359999999999353
+Elapsed Time: 43.099 (s)
+##### Iteration 30
+Percent actually necessary to pre-compute: 23.928000%
+PreComputed 23928, Elapsed Time: 0.316 (s)
+Cost = 0.9551502460863477, Correct(%) = 0.7355999999999353
+Elapsed Time: 44.485 (s)
+##### Iteration 31
+Percent actually necessary to pre-compute: 23.912001%
+PreComputed 23912, Elapsed Time: 0.264 (s)
+Cost = 0.9365718401434957, Correct(%) = 0.7430999999999345
+Elapsed Time: 45.91 (s)
+##### Iteration 32
+Percent actually necessary to pre-compute: 24.055000%
+PreComputed 24055, Elapsed Time: 0.264 (s)
+Cost = 0.9140758862021164, Correct(%) = 0.7419999999999346
+Elapsed Time: 47.297 (s)
+##### Iteration 33
+Percent actually necessary to pre-compute: 23.934001%
+PreComputed 23934, Elapsed Time: 0.26 (s)
+Cost = 0.8571354413535566, Correct(%) = 0.7535999999999333
+Elapsed Time: 48.66 (s)
+##### Iteration 34
+Percent actually necessary to pre-compute: 24.049000%
+PreComputed 24049, Elapsed Time: 0.32 (s)
+Cost = 0.8509549418531329, Correct(%) = 0.7546999999999332
+Elapsed Time: 50.067 (s)
+##### Iteration 35
+Percent actually necessary to pre-compute: 23.957001%
+PreComputed 23957, Elapsed Time: 0.281 (s)
+Cost = 0.8163657532141515, Correct(%) = 0.7639999999999322
+Elapsed Time: 51.488 (s)
+##### Iteration 36
+Percent actually necessary to pre-compute: 23.853999%
+PreComputed 23854, Elapsed Time: 0.287 (s)
+Cost = 0.822775047707531, Correct(%) = 0.7585999999999328
+Elapsed Time: 52.846 (s)
+##### Iteration 37
+Percent actually necessary to pre-compute: 23.917000%
+PreComputed 23917, Elapsed Time: 0.31 (s)
+Cost = 0.8085722537398031, Correct(%) = 0.7758999999999309
+Elapsed Time: 54.273 (s)
+##### Iteration 38
+Percent actually necessary to pre-compute: 23.904000%
+PreComputed 23904, Elapsed Time: 0.263 (s)
+Cost = 0.7779856751260174, Correct(%) = 0.7705999999999315
+Elapsed Time: 55.711 (s)
+##### Iteration 39
+Percent actually necessary to pre-compute: 23.752999%
+PreComputed 23753, Elapsed Time: 0.263 (s)
+Cost = 0.7595470617813483, Correct(%) = 0.7794999999999305
+Elapsed Time: 57.066 (s)
+##### Iteration 40
+Percent actually necessary to pre-compute: 23.804000%
+PreComputed 23804, Elapsed Time: 0.263 (s)
+Cost = 0.7697544657180964, Correct(%) = 0.7821999999999302
+Elapsed Time: 58.441 (s)
+##### Iteration 41
+Percent actually necessary to pre-compute: 23.873000%
+PreComputed 23873, Elapsed Time: 0.267 (s)
+Cost = 0.7569339528591884, Correct(%) = 0.7831999999999301
+Elapsed Time: 59.928 (s)
+##### Iteration 42
+Percent actually necessary to pre-compute: 23.948000%
+PreComputed 23948, Elapsed Time: 0.261 (s)
+Cost = 0.7389003746545811, Correct(%) = 0.7830999999999301
+Elapsed Time: 61.332 (s)
+##### Iteration 43
+Percent actually necessary to pre-compute: 23.907000%
+PreComputed 23907, Elapsed Time: 0.261 (s)
+Cost = 0.7389532701793209, Correct(%) = 0.7825999999999301
+Elapsed Time: 62.672 (s)
+##### Iteration 44
+Percent actually necessary to pre-compute: 23.819999%
+PreComputed 23820, Elapsed Time: 0.26 (s)
+Cost = 0.6972211262169978, Correct(%) = 0.793199999999929
+Elapsed Time: 64.055 (s)
+##### Iteration 45
+Percent actually necessary to pre-compute: 23.886000%
+PreComputed 23886, Elapsed Time: 0.263 (s)
+Cost = 0.6917973001520971, Correct(%) = 0.7950999999999288
+Elapsed Time: 65.419 (s)
+##### Iteration 46
+Percent actually necessary to pre-compute: 23.972000%
+PreComputed 23972, Elapsed Time: 0.264 (s)
+Cost = 0.6706124707992673, Correct(%) = 0.7957999999999287
+Elapsed Time: 66.83 (s)
+##### Iteration 47
+Percent actually necessary to pre-compute: 23.855001%
+PreComputed 23855, Elapsed Time: 0.26 (s)
+Cost = 0.6643805671543501, Correct(%) = 0.8040999999999278
+Elapsed Time: 68.221 (s)
+##### Iteration 48
+Percent actually necessary to pre-compute: 23.872000%
+PreComputed 23872, Elapsed Time: 0.264 (s)
+Cost = 0.6388908854368849, Correct(%) = 0.8094999999999272
+Elapsed Time: 69.566 (s)
+##### Iteration 49
+Percent actually necessary to pre-compute: 24.044000%
+PreComputed 24044, Elapsed Time: 0.31 (s)
+Cost = 0.63386725868795, Correct(%) = 0.8059999999999276
+Elapsed Time: 70.983 (s)
+##### Iteration 50
+Percent actually necessary to pre-compute: 23.949000%
+PreComputed 23949, Elapsed Time: 0.296 (s)
+Cost = 0.6284714152973002, Correct(%) = 0.811399999999927
+Elapsed Time: 72.416 (s)
+##### Iteration 51
+Percent actually necessary to pre-compute: 23.875999%
+PreComputed 23876, Elapsed Time: 0.246 (s)
+Cost = 0.6176417235757246, Correct(%) = 0.8141999999999266
+Elapsed Time: 73.92 (s)
+##### Iteration 52
+Percent actually necessary to pre-compute: 23.981000%
+PreComputed 23981, Elapsed Time: 0.264 (s)
+Cost = 0.6288542766617877, Correct(%) = 0.8049999999999277
+Elapsed Time: 75.29 (s)
+##### Iteration 53
+Percent actually necessary to pre-compute: 23.931000%
+PreComputed 23931, Elapsed Time: 0.259 (s)
+Cost = 0.6068439774010385, Correct(%) = 0.8168999999999264
+Elapsed Time: 76.628 (s)
+##### Iteration 54
+Percent actually necessary to pre-compute: 23.960000%
+PreComputed 23960, Elapsed Time: 0.269 (s)
+Cost = 0.5983482373119287, Correct(%) = 0.8159999999999265
+Elapsed Time: 78.022 (s)
+##### Iteration 55
+Percent actually necessary to pre-compute: 23.823000%
+PreComputed 23823, Elapsed Time: 0.269 (s)
+Cost = 0.5700998918845529, Correct(%) = 0.8277999999999252
+Elapsed Time: 79.495 (s)
+##### Iteration 56
+Percent actually necessary to pre-compute: 24.245000%
+PreComputed 24245, Elapsed Time: 0.264 (s)
+Cost = 0.5754432842984807, Correct(%) = 0.8219999999999258
+Elapsed Time: 80.845 (s)
+##### Iteration 57
+Percent actually necessary to pre-compute: 23.986000%
+PreComputed 23986, Elapsed Time: 0.319 (s)
+Cost = 0.5611268465472229, Correct(%) = 0.8323999999999246
+Elapsed Time: 82.238 (s)
+##### Iteration 58
+Percent actually necessary to pre-compute: 23.859000%
+PreComputed 23859, Elapsed Time: 0.262 (s)
+Cost = 0.5611384267211008, Correct(%) = 0.8259999999999253
+Elapsed Time: 83.621 (s)
+##### Iteration 59
+Percent actually necessary to pre-compute: 23.921999%
+PreComputed 23922, Elapsed Time: 0.265 (s)
+Cost = 0.5478147566335723, Correct(%) = 0.8337999999999245
+Elapsed Time: 84.961 (s)
+##### Iteration 60
+Percent actually necessary to pre-compute: 23.791000%
+PreComputed 23791, Elapsed Time: 0.261 (s)
+Cost = 0.5338215093728604, Correct(%) = 0.8357999999999243
+Elapsed Time: 86.352 (s)
+##### Iteration 61
+Percent actually necessary to pre-compute: 23.936000%
+PreComputed 23936, Elapsed Time: 0.264 (s)
+Cost = 0.537541997817561, Correct(%) = 0.838499999999924
+Elapsed Time: 87.685 (s)
+##### Iteration 62
+Percent actually necessary to pre-compute: 23.782000%
+PreComputed 23782, Elapsed Time: 0.3 (s)
+Cost = 0.5366593834570017, Correct(%) = 0.8333999999999245
+Elapsed Time: 89.082 (s)
+##### Iteration 63
+Percent actually necessary to pre-compute: 23.944999%
+PreComputed 23945, Elapsed Time: 0.265 (s)
+Cost = 0.5367662760100692, Correct(%) = 0.8372999999999241
+Elapsed Time: 90.519 (s)
+##### Iteration 64
+Percent actually necessary to pre-compute: 23.948000%
+PreComputed 23948, Elapsed Time: 0.261 (s)
+Cost = 0.5323976005752665, Correct(%) = 0.837899999999924
+Elapsed Time: 91.887 (s)
+##### Iteration 65
+Percent actually necessary to pre-compute: 23.871000%
+PreComputed 23871, Elapsed Time: 0.324 (s)
+Cost = 0.515046398584261, Correct(%) = 0.8451999999999232
+Elapsed Time: 93.288 (s)
+##### Iteration 66
+Percent actually necessary to pre-compute: 23.897000%
+PreComputed 23897, Elapsed Time: 0.267 (s)
+Cost = 0.5339759041195303, Correct(%) = 0.838699999999924
+Elapsed Time: 94.673 (s)
+##### Iteration 67
+Percent actually necessary to pre-compute: 24.016000%
+PreComputed 24016, Elapsed Time: 0.258 (s)
+Cost = 0.5239337504298675, Correct(%) = 0.8439999999999234
+Elapsed Time: 96.065 (s)
+##### Iteration 68
+Percent actually necessary to pre-compute: 23.952000%
+PreComputed 23952, Elapsed Time: 0.303 (s)
+Cost = 0.5046279981874994, Correct(%) = 0.8455999999999232
+Elapsed Time: 97.563 (s)
+##### Iteration 69
+Percent actually necessary to pre-compute: 24.032000%
+PreComputed 24032, Elapsed Time: 0.265 (s)
+Cost = 0.488264408730739, Correct(%) = 0.8513999999999226
+Elapsed Time: 98.905 (s)
+##### Iteration 70
+Percent actually necessary to pre-compute: 23.811001%
+PreComputed 23811, Elapsed Time: 0.302 (s)
+Cost = 0.48635694668071616, Correct(%) = 0.8457999999999232
+Elapsed Time: 100.283 (s)
+##### Iteration 71
+Percent actually necessary to pre-compute: 23.882000%
+PreComputed 23882, Elapsed Time: 0.261 (s)
+Cost = 0.49115075632047167, Correct(%) = 0.8504999999999227
+Elapsed Time: 101.743 (s)
+##### Iteration 72
+Percent actually necessary to pre-compute: 23.887999%
+PreComputed 23888, Elapsed Time: 0.262 (s)
+Cost = 0.4531397947425716, Correct(%) = 0.8543999999999222
+Elapsed Time: 103.102 (s)
+##### Iteration 73
+Percent actually necessary to pre-compute: 24.027000%
+PreComputed 24027, Elapsed Time: 0.263 (s)
+Cost = 0.4606224010896001, Correct(%) = 0.855999999999922
+Elapsed Time: 104.485 (s)
+##### Iteration 74
+Percent actually necessary to pre-compute: 23.965999%
+PreComputed 23966, Elapsed Time: 0.262 (s)
+Cost = 0.46632881200947773, Correct(%) = 0.8587999999999217
+Elapsed Time: 105.829 (s)
+##### Iteration 75
+Percent actually necessary to pre-compute: 23.975000%
+PreComputed 23975, Elapsed Time: 0.32 (s)
+Cost = 0.4603438875153273, Correct(%) = 0.8582999999999218
+Elapsed Time: 107.226 (s)
+##### Iteration 76
+Percent actually necessary to pre-compute: 24.009000%
+PreComputed 24009, Elapsed Time: 0.265 (s)
+Cost = 0.46120775355133875, Correct(%) = 0.8572999999999219
+Elapsed Time: 108.608 (s)
+##### Iteration 77
+Percent actually necessary to pre-compute: 23.981000%
+PreComputed 23981, Elapsed Time: 0.262 (s)
+Cost = 0.4801256070813445, Correct(%) = 0.8551999999999221
+Elapsed Time: 109.975 (s)
+##### Iteration 78
+Percent actually necessary to pre-compute: 23.965000%
+PreComputed 23965, Elapsed Time: 0.259 (s)
+Cost = 0.4641042378288703, Correct(%) = 0.8542999999999222
+Elapsed Time: 111.457 (s)
+##### Iteration 79
+Percent actually necessary to pre-compute: 23.804000%
+PreComputed 23804, Elapsed Time: 0.26 (s)
+Cost = 0.47040018478139245, Correct(%) = 0.856499999999922
+Elapsed Time: 112.866 (s)
+##### Iteration 80
+Percent actually necessary to pre-compute: 24.059001%
+PreComputed 24059, Elapsed Time: 0.299 (s)
+Cost = 0.478491002476017, Correct(%) = 0.8526999999999224
+Elapsed Time: 114.273 (s)
+##### Iteration 81
+Percent actually necessary to pre-compute: 23.950000%
+PreComputed 23950, Elapsed Time: 0.261 (s)
+Cost = 0.4851228016098774, Correct(%) = 0.846899999999923
+Elapsed Time: 115.733 (s)
+##### Iteration 82
+Percent actually necessary to pre-compute: 23.917000%
+PreComputed 23917, Elapsed Time: 0.262 (s)
+Cost = 0.4492651987042563, Correct(%) = 0.8594999999999217
+Elapsed Time: 117.061 (s)
+##### Iteration 83
+Percent actually necessary to pre-compute: 23.999999%
+PreComputed 24000, Elapsed Time: 0.26 (s)
+Cost = 0.4462723628809656, Correct(%) = 0.864999999999921
+Elapsed Time: 118.45 (s)
+##### Iteration 84
+Percent actually necessary to pre-compute: 23.946001%
+PreComputed 23946, Elapsed Time: 0.262 (s)
+Cost = 0.43030742707775244, Correct(%) = 0.865099999999921
+Elapsed Time: 119.845 (s)
+##### Iteration 85
+Percent actually necessary to pre-compute: 23.968001%
+PreComputed 23968, Elapsed Time: 0.26 (s)
+Cost = 0.43331235681886704, Correct(%) = 0.8640999999999212
+Elapsed Time: 121.355 (s)
+##### Iteration 86
+Percent actually necessary to pre-compute: 23.921999%
+PreComputed 23922, Elapsed Time: 0.261 (s)
+Cost = 0.43610368069653443, Correct(%) = 0.8639999999999212
+Elapsed Time: 122.705 (s)
+##### Iteration 87
+Percent actually necessary to pre-compute: 23.928000%
+PreComputed 23928, Elapsed Time: 0.33 (s)
+Cost = 0.4280535312072511, Correct(%) = 0.8721999999999203
+Elapsed Time: 124.203 (s)
+##### Iteration 88
+Percent actually necessary to pre-compute: 23.864999%
+PreComputed 23865, Elapsed Time: 0.261 (s)
+Cost = 0.43000151691948396, Correct(%) = 0.8623999999999213
+Elapsed Time: 125.636 (s)
+##### Iteration 89
+Percent actually necessary to pre-compute: 24.011000%
+PreComputed 24011, Elapsed Time: 0.313 (s)
+Cost = 0.4171736457667528, Correct(%) = 0.8674999999999208
+Elapsed Time: 127.125 (s)
+##### Iteration 90
+Percent actually necessary to pre-compute: 23.895000%
+PreComputed 23895, Elapsed Time: 0.264 (s)
+Cost = 0.4266402554783286, Correct(%) = 0.8617999999999214
+Elapsed Time: 128.578 (s)
+##### Iteration 91
+Percent actually necessary to pre-compute: 24.017000%
+PreComputed 24017, Elapsed Time: 0.265 (s)
+Cost = 0.3934920163885904, Correct(%) = 0.87489999999992
+Elapsed Time: 129.914 (s)
+##### Iteration 92
+Percent actually necessary to pre-compute: 23.792000%
+PreComputed 23792, Elapsed Time: 0.259 (s)
+Cost = 0.38803628734050255, Correct(%) = 0.8751999999999199
+Elapsed Time: 131.306 (s)
+##### Iteration 93
+Percent actually necessary to pre-compute: 23.999999%
+PreComputed 24000, Elapsed Time: 0.262 (s)
+Cost = 0.4151487142201234, Correct(%) = 0.8700999999999205
+Elapsed Time: 132.656 (s)
+##### Iteration 94
+Percent actually necessary to pre-compute: 24.127001%
+PreComputed 24127, Elapsed Time: 0.265 (s)
+Cost = 0.3942251812293691, Correct(%) = 0.8726999999999202
+Elapsed Time: 134.068 (s)
+##### Iteration 95
+Percent actually necessary to pre-compute: 24.044999%
+PreComputed 24045, Elapsed Time: 0.276 (s)
+Cost = 0.40860497921354116, Correct(%) = 0.8714999999999203
+Elapsed Time: 135.424 (s)
+##### Iteration 96
+Percent actually necessary to pre-compute: 24.029000%
+PreComputed 24029, Elapsed Time: 0.314 (s)
+Cost = 0.4007381427632319, Correct(%) = 0.8735999999999201
+Elapsed Time: 136.929 (s)
+##### Iteration 97
+Percent actually necessary to pre-compute: 23.807000%
+PreComputed 23807, Elapsed Time: 0.27 (s)
+Cost = 0.3890985761589423, Correct(%) = 0.8808999999999193
+Elapsed Time: 138.284 (s)
+##### Iteration 98
+Percent actually necessary to pre-compute: 23.916000%
+PreComputed 23916, Elapsed Time: 0.313 (s)
+Cost = 0.4039511179100807, Correct(%) = 0.8714999999999203
+Elapsed Time: 139.673 (s)
+##### Iteration 99
+Percent actually necessary to pre-compute: 23.937000%
+PreComputed 23937, Elapsed Time: 0.261 (s)
+Cost = 0.39413970684023414, Correct(%) = 0.8822999999999191
+Elapsed Time: 141.059 (s)
+##### Iteration 100
+Percent actually necessary to pre-compute: 23.917000%
+PreComputed 23917, Elapsed Time: 0.263 (s)
+Cost = 0.3906788170849224, Correct(%) = 0.8782999999999196
+Elapsed Time: 142.398 (s)
+##### Iteration 101
+Percent actually necessary to pre-compute: 23.991001%
+PreComputed 23991, Elapsed Time: 0.262 (s)
+Cost = 0.3669498887058905, Correct(%) = 0.8843999999999189
+Elapsed Time: 143.801 (s)
+##### Iteration 102
+Percent actually necessary to pre-compute: 23.894000%
+PreComputed 23894, Elapsed Time: 0.264 (s)
+Cost = 0.3754972974699909, Correct(%) = 0.883999999999919
+Elapsed Time: 145.139 (s)
+##### Iteration 103
+Percent actually necessary to pre-compute: 24.038000%
+PreComputed 24038, Elapsed Time: 0.325 (s)
+Cost = 0.3936290556048491, Correct(%) = 0.8769999999999197
+Elapsed Time: 146.626 (s)
+##### Iteration 104
+Percent actually necessary to pre-compute: 23.873000%
+PreComputed 23873, Elapsed Time: 0.272 (s)
+Cost = 0.3596164609997142, Correct(%) = 0.8852999999999188
+Elapsed Time: 148.011 (s)
+##### Iteration 105
+Percent actually necessary to pre-compute: 23.864999%
+PreComputed 23865, Elapsed Time: 0.268 (s)
+Cost = 0.3795357090568966, Correct(%) = 0.883999999999919
+Elapsed Time: 149.344 (s)
+##### Iteration 106
+Percent actually necessary to pre-compute: 23.910999%
+PreComputed 23911, Elapsed Time: 0.257 (s)
+Cost = 0.3700092780047717, Correct(%) = 0.8811999999999193
+Elapsed Time: 150.709 (s)
+##### Iteration 107
+Percent actually necessary to pre-compute: 23.986000%
+PreComputed 23986, Elapsed Time: 0.257 (s)
+Cost = 0.3498226951989325, Correct(%) = 0.8895999999999183
+Elapsed Time: 152.055 (s)
+##### Iteration 108
+Percent actually necessary to pre-compute: 24.022000%
+PreComputed 24022, Elapsed Time: 0.288 (s)
+Cost = 0.35967298005729853, Correct(%) = 0.8860999999999187
+Elapsed Time: 153.465 (s)
+##### Iteration 109
+Percent actually necessary to pre-compute: 23.953000%
+PreComputed 23953, Elapsed Time: 0.257 (s)
+Cost = 0.3502201053909207, Correct(%) = 0.8907999999999182
+Elapsed Time: 154.816 (s)
+##### Iteration 110
+Percent actually necessary to pre-compute: 23.768000%
+PreComputed 23768, Elapsed Time: 0.318 (s)
+Cost = 0.3591647784924697, Correct(%) = 0.8858999999999188
+Elapsed Time: 156.17 (s)
+##### Iteration 111
+Percent actually necessary to pre-compute: 24.101000%
+PreComputed 24101, Elapsed Time: 0.261 (s)
+Cost = 0.3601825472214588, Correct(%) = 0.8899999999999183
+Elapsed Time: 157.542 (s)
+##### Iteration 112
+Percent actually necessary to pre-compute: 23.717999%
+PreComputed 23718, Elapsed Time: 0.276 (s)
+Cost = 0.3509282571986487, Correct(%) = 0.8889999999999184
+Elapsed Time: 158.839 (s)
+##### Iteration 113
+Percent actually necessary to pre-compute: 23.796999%
+PreComputed 23797, Elapsed Time: 0.236 (s)
+Cost = 0.3564387101630311, Correct(%) = 0.8878999999999185
+Elapsed Time: 160.064 (s)
+##### Iteration 114
+Percent actually necessary to pre-compute: 23.897000%
+PreComputed 23897, Elapsed Time: 0.236 (s)
+Cost = 0.3719155304862031, Correct(%) = 0.884099999999919
+Elapsed Time: 161.249 (s)
+##### Iteration 115
+Percent actually necessary to pre-compute: 23.785000%
+PreComputed 23785, Elapsed Time: 0.236 (s)
+Cost = 0.3378414137731141, Correct(%) = 0.8950999999999177
+Elapsed Time: 162.475 (s)
+##### Iteration 116
+Percent actually necessary to pre-compute: 24.059001%
+PreComputed 24059, Elapsed Time: 0.242 (s)
+Cost = 0.34488971202281116, Correct(%) = 0.8932999999999179
+Elapsed Time: 163.664 (s)
+##### Iteration 117
+Percent actually necessary to pre-compute: 23.951000%
+PreComputed 23951, Elapsed Time: 0.297 (s)
+Cost = 0.35199221102478584, Correct(%) = 0.8879999999999185
+Elapsed Time: 164.925 (s)
+##### Iteration 118
+Percent actually necessary to pre-compute: 23.776001%
+PreComputed 23776, Elapsed Time: 0.235 (s)
+Cost = 0.34254107800594263, Correct(%) = 0.8910999999999182
+Elapsed Time: 166.104 (s)
+##### Iteration 119
+Percent actually necessary to pre-compute: 23.897000%
+PreComputed 23897, Elapsed Time: 0.275 (s)
+Cost = 0.3600476171946217, Correct(%) = 0.8898999999999183
+Elapsed Time: 167.328 (s)
+##### Iteration 120
+Percent actually necessary to pre-compute: 23.913001%
+PreComputed 23913, Elapsed Time: 0.236 (s)
+Cost = 0.33945593586706796, Correct(%) = 0.8936999999999179
+Elapsed Time: 168.567 (s)
+##### Iteration 121
+Percent actually necessary to pre-compute: 23.771000%
+PreComputed 23771, Elapsed Time: 0.238 (s)
+Cost = 0.34559641334617663, Correct(%) = 0.8940999999999178
+Elapsed Time: 169.785 (s)
+##### Iteration 122
+Percent actually necessary to pre-compute: 24.028000%
+PreComputed 24028, Elapsed Time: 0.245 (s)
+Cost = 0.3520478472294935, Correct(%) = 0.8890999999999184
+Elapsed Time: 171.051 (s)
+##### Iteration 123
+Percent actually necessary to pre-compute: 23.891000%
+PreComputed 23891, Elapsed Time: 0.237 (s)
+Cost = 0.35253834166848164, Correct(%) = 0.8905999999999182
+Elapsed Time: 172.241 (s)
+##### Iteration 124
+Percent actually necessary to pre-compute: 23.994000%
+PreComputed 23994, Elapsed Time: 0.283 (s)
+Cost = 0.33792508956251277, Correct(%) = 0.8913999999999181
+Elapsed Time: 173.474 (s)
+##### Iteration 125
+Percent actually necessary to pre-compute: 24.044999%
+PreComputed 24045, Elapsed Time: 0.24 (s)
+Cost = 0.33506009458976244, Correct(%) = 0.8973999999999175
+Elapsed Time: 174.709 (s)
+##### Iteration 126
+Percent actually necessary to pre-compute: 23.980001%
+PreComputed 23980, Elapsed Time: 0.24 (s)
+Cost = 0.3253205882419373, Correct(%) = 0.8919999999999181
+Elapsed Time: 175.91 (s)
+##### Iteration 127
+Percent actually necessary to pre-compute: 23.984000%
+PreComputed 23984, Elapsed Time: 0.239 (s)
+Cost = 0.3331247195388256, Correct(%) = 0.8985999999999174
+Elapsed Time: 177.171 (s)
+##### Iteration 128
+Percent actually necessary to pre-compute: 24.095000%
+PreComputed 24095, Elapsed Time: 0.241 (s)
+Cost = 0.3120645730415307, Correct(%) = 0.9002999999999172
+Elapsed Time: 178.385 (s)
+##### Iteration 129
+Percent actually necessary to pre-compute: 24.120000%
+PreComputed 24120, Elapsed Time: 0.29 (s)
+Cost = 0.3177840039237052, Correct(%) = 0.8986999999999173
+Elapsed Time: 179.648 (s)
+##### Iteration 130
+Percent actually necessary to pre-compute: 24.097000%
+PreComputed 24097, Elapsed Time: 0.242 (s)
+Cost = 0.3266369448096074, Correct(%) = 0.8981999999999174
+Elapsed Time: 180.87 (s)
+##### Iteration 131
+Percent actually necessary to pre-compute: 23.803000%
+PreComputed 23803, Elapsed Time: 0.278 (s)
+Cost = 0.31365768107184255, Correct(%) = 0.9028999999999169
+Elapsed Time: 182.128 (s)
+##### Iteration 132
+Percent actually necessary to pre-compute: 24.004000%
+PreComputed 24004, Elapsed Time: 0.242 (s)
+Cost = 0.3134734522688013, Correct(%) = 0.9010999999999171
+Elapsed Time: 183.435 (s)
+##### Iteration 133
+Percent actually necessary to pre-compute: 23.998000%
+PreComputed 23998, Elapsed Time: 0.245 (s)
+Cost = 0.32932975114821295, Correct(%) = 0.8995999999999172
+Elapsed Time: 184.688 (s)
+##### Iteration 134
+Percent actually necessary to pre-compute: 24.037001%
+PreComputed 24037, Elapsed Time: 0.247 (s)
+Cost = 0.32455676153541646, Correct(%) = 0.8976999999999175
+Elapsed Time: 186.026 (s)
+##### Iteration 135
+Percent actually necessary to pre-compute: 23.830999%
+PreComputed 23831, Elapsed Time: 0.25 (s)
+Cost = 0.3102832310716251, Correct(%) = 0.9027999999999169
+Elapsed Time: 187.307 (s)
+##### Iteration 136
+Percent actually necessary to pre-compute: 23.977999%
+PreComputed 23978, Elapsed Time: 0.297 (s)
+Cost = 0.3095411077942149, Correct(%) = 0.901999999999917
+Elapsed Time: 188.629 (s)
+##### Iteration 137
+Percent actually necessary to pre-compute: 23.974000%
+PreComputed 23974, Elapsed Time: 0.246 (s)
+Cost = 0.31875905353915357, Correct(%) = 0.901399999999917
+Elapsed Time: 189.899 (s)
+##### Iteration 138
+Percent actually necessary to pre-compute: 24.027000%
+PreComputed 24027, Elapsed Time: 0.263 (s)
+Cost = 0.29632244701408483, Correct(%) = 0.9032999999999168
+Elapsed Time: 191.296 (s)
+##### Iteration 139
+Percent actually necessary to pre-compute: 24.010000%
+PreComputed 24010, Elapsed Time: 0.254 (s)
+Cost = 0.31145959568842924, Correct(%) = 0.8986999999999173
+Elapsed Time: 192.643 (s)
+##### Iteration 140
+Percent actually necessary to pre-compute: 23.910999%
+PreComputed 23911, Elapsed Time: 0.251 (s)
+Cost = 0.30485419236352584, Correct(%) = 0.8991999999999173
+Elapsed Time: 193.968 (s)
+##### Iteration 141
+Percent actually necessary to pre-compute: 24.014001%
+PreComputed 24014, Elapsed Time: 0.254 (s)
+Cost = 0.3086614669957973, Correct(%) = 0.9030999999999169
+Elapsed Time: 195.316 (s)
+##### Iteration 142
+Percent actually necessary to pre-compute: 24.031000%
+PreComputed 24031, Elapsed Time: 0.286 (s)
+Cost = 0.3147457075977758, Correct(%) = 0.9009999999999171
+Elapsed Time: 196.722 (s)
+##### Iteration 143
+Percent actually necessary to pre-compute: 24.037001%
+PreComputed 24037, Elapsed Time: 0.353 (s)
+Cost = 0.29317926142886713, Correct(%) = 0.9066999999999165
+Elapsed Time: 198.112 (s)
+##### Iteration 144
+Percent actually necessary to pre-compute: 23.960000%
+PreComputed 23960, Elapsed Time: 0.254 (s)
+Cost = 0.3011638031062818, Correct(%) = 0.9050999999999166
+Elapsed Time: 199.435 (s)
+##### Iteration 145
+Percent actually necessary to pre-compute: 24.023999%
+PreComputed 24024, Elapsed Time: 0.256 (s)
+Cost = 0.29152878108807334, Correct(%) = 0.9088999999999162
+Elapsed Time: 200.721 (s)
+##### Iteration 146
+Percent actually necessary to pre-compute: 24.102999%
+PreComputed 24103, Elapsed Time: 0.256 (s)
+Cost = 0.30101191601299526, Correct(%) = 0.9042999999999167
+Elapsed Time: 202.063 (s)
+##### Iteration 147
+Percent actually necessary to pre-compute: 23.675001%
+PreComputed 23675, Elapsed Time: 0.251 (s)
+Cost = 0.3020108027926356, Correct(%) = 0.9044999999999167
+Elapsed Time: 203.355 (s)
+##### Iteration 148
+Percent actually necessary to pre-compute: 24.068999%
+PreComputed 24069, Elapsed Time: 0.257 (s)
+Cost = 0.30042084108672357, Correct(%) = 0.9042999999999167
+Elapsed Time: 204.743 (s)
+##### Iteration 149
+Percent actually necessary to pre-compute: 24.047001%
+PreComputed 24047, Elapsed Time: 0.257 (s)
+Cost = 0.299901028534888, Correct(%) = 0.9071999999999164
+Elapsed Time: 206.144 (s)
+##### Iteration 150
+Percent actually necessary to pre-compute: 23.965000%
+PreComputed 23965, Elapsed Time: 0.326 (s)
+Cost = 0.29868138210098066, Correct(%) = 0.9046999999999167
+Elapsed Time: 207.583 (s)
+##### Iteration 151
+Percent actually necessary to pre-compute: 23.977000%
+PreComputed 23977, Elapsed Time: 0.28 (s)
+Cost = 0.2837696889689968, Correct(%) = 0.9098999999999161
+Elapsed Time: 209.017 (s)
+##### Iteration 152
+Percent actually necessary to pre-compute: 23.916000%
+PreComputed 23916, Elapsed Time: 0.262 (s)
+Cost = 0.30958752183408494, Correct(%) = 0.9037999999999168
+Elapsed Time: 210.45 (s)
+##### Iteration 153
+Percent actually necessary to pre-compute: 23.949000%
+PreComputed 23949, Elapsed Time: 0.269 (s)
+Cost = 0.29153319736684224, Correct(%) = 0.9072999999999164
+Elapsed Time: 211.873 (s)
+##### Iteration 154
+Percent actually necessary to pre-compute: 24.089999%
+PreComputed 24090, Elapsed Time: 0.261 (s)
+Cost = 0.28437832474676267, Correct(%) = 0.9085999999999163
+Elapsed Time: 213.226 (s)
+##### Iteration 155
+Percent actually necessary to pre-compute: 23.952000%
+PreComputed 23952, Elapsed Time: 0.259 (s)
+Cost = 0.2826063193724627, Correct(%) = 0.9116999999999159
+Elapsed Time: 214.862 (s)
+##### Iteration 156
+Percent actually necessary to pre-compute: 24.040000%
+PreComputed 24040, Elapsed Time: 0.302 (s)
+Cost = 0.26773358443185197, Correct(%) = 0.9162999999999154
+Elapsed Time: 216.425 (s)
+##### Iteration 157
+Percent actually necessary to pre-compute: 23.850000%
+PreComputed 23850, Elapsed Time: 0.32 (s)
+Cost = 0.27449983977300524, Correct(%) = 0.910399999999916
+Elapsed Time: 217.928 (s)
+##### Iteration 158
+Percent actually necessary to pre-compute: 23.982000%
+PreComputed 23982, Elapsed Time: 0.263 (s)
+Cost = 0.2579252925523459, Correct(%) = 0.9166999999999154
+Elapsed Time: 219.354 (s)
+##### Iteration 159
+Percent actually necessary to pre-compute: 24.006000%
+PreComputed 24006, Elapsed Time: 0.303 (s)
+Cost = 0.26306956371917406, Correct(%) = 0.9162999999999154
+Elapsed Time: 220.748 (s)
+##### Iteration 160
+Percent actually necessary to pre-compute: 23.950000%
+PreComputed 23950, Elapsed Time: 0.259 (s)
+Cost = 0.2830598721864627, Correct(%) = 0.9120999999999159
+Elapsed Time: 222.343 (s)
+##### Iteration 161
+Percent actually necessary to pre-compute: 23.992001%
+PreComputed 23992, Elapsed Time: 0.296 (s)
+Cost = 0.27812591960300304, Correct(%) = 0.9100999999999161
+Elapsed Time: 223.868 (s)
+##### Iteration 162
+Percent actually necessary to pre-compute: 23.789001%
+PreComputed 23789, Elapsed Time: 0.248 (s)
+Cost = 0.27315220124180106, Correct(%) = 0.9140999999999156
+Elapsed Time: 225.32 (s)
+##### Iteration 163
+Percent actually necessary to pre-compute: 23.941000%
+PreComputed 23941, Elapsed Time: 0.251 (s)
+Cost = 0.2700874806170392, Correct(%) = 0.9121999999999159
+Elapsed Time: 226.672 (s)
+##### Iteration 164
+Percent actually necessary to pre-compute: 24.081001%
+PreComputed 24081, Elapsed Time: 0.365 (s)
+Cost = 0.2717319842907325, Correct(%) = 0.9144999999999156
+Elapsed Time: 228.125 (s)
+##### Iteration 165
+Percent actually necessary to pre-compute: 23.754001%
+PreComputed 23754, Elapsed Time: 0.26 (s)
+Cost = 0.2579071521373156, Correct(%) = 0.9224999999999147
+Elapsed Time: 229.551 (s)
+##### Iteration 166
+Percent actually necessary to pre-compute: 23.827000%
+PreComputed 23827, Elapsed Time: 0.257 (s)
+Cost = 0.2757081549503428, Correct(%) = 0.9118999999999159
+Elapsed Time: 230.949 (s)
+##### Iteration 167
+Percent actually necessary to pre-compute: 23.886999%
+PreComputed 23887, Elapsed Time: 0.306 (s)
+Cost = 0.2688132576010643, Correct(%) = 0.9170999999999153
+Elapsed Time: 232.472 (s)
+##### Iteration 168
+Percent actually necessary to pre-compute: 23.960000%
+PreComputed 23960, Elapsed Time: 0.259 (s)
+Cost = 0.2850025176127565, Correct(%) = 0.9093999999999162
+Elapsed Time: 233.866 (s)
+##### Iteration 169
+Percent actually necessary to pre-compute: 23.998000%
+PreComputed 23998, Elapsed Time: 0.266 (s)
+Cost = 0.2587043989553512, Correct(%) = 0.9165999999999154
+Elapsed Time: 235.337 (s)
+##### Iteration 170
+Percent actually necessary to pre-compute: 23.969001%
+PreComputed 23969, Elapsed Time: 0.26 (s)
+Cost = 0.25682934134030627, Correct(%) = 0.9185999999999152
+Elapsed Time: 236.702 (s)
+##### Iteration 171
+Percent actually necessary to pre-compute: 23.930000%
+PreComputed 23930, Elapsed Time: 0.311 (s)
+Cost = 0.2714371183281482, Correct(%) = 0.9125999999999158
+Elapsed Time: 238.102 (s)
+##### Iteration 172
+Percent actually necessary to pre-compute: 23.985000%
+PreComputed 23985, Elapsed Time: 0.263 (s)
+Cost = 0.2679708224326367, Correct(%) = 0.9173999999999153
+Elapsed Time: 239.605 (s)
+##### Iteration 173
+Percent actually necessary to pre-compute: 24.007000%
+PreComputed 24007, Elapsed Time: 0.284 (s)
+Cost = 0.25293585572219246, Correct(%) = 0.9153999999999155
+Elapsed Time: 241.036 (s)
+##### Iteration 174
+Percent actually necessary to pre-compute: 24.084000%
+PreComputed 24084, Elapsed Time: 0.266 (s)
+Cost = 0.26382294469244344, Correct(%) = 0.9181999999999152
+Elapsed Time: 242.641 (s)
+##### Iteration 175
+Percent actually necessary to pre-compute: 23.992001%
+PreComputed 23992, Elapsed Time: 0.251 (s)
+Cost = 0.263637070623768, Correct(%) = 0.9125999999999158
+Elapsed Time: 243.953 (s)
+##### Iteration 176
+Percent actually necessary to pre-compute: 23.987000%
+PreComputed 23987, Elapsed Time: 0.309 (s)
+Cost = 0.26423989102508666, Correct(%) = 0.9188999999999151
+Elapsed Time: 245.433 (s)
+##### Iteration 177
+Percent actually necessary to pre-compute: 23.935001%
+PreComputed 23935, Elapsed Time: 0.259 (s)
+Cost = 0.24937216680957752, Correct(%) = 0.919899999999915
+Elapsed Time: 246.847 (s)
+##### Iteration 178
+Percent actually necessary to pre-compute: 23.962000%
+PreComputed 23962, Elapsed Time: 0.249 (s)
+Cost = 0.2558341034218713, Correct(%) = 0.9207999999999149
+Elapsed Time: 248.29 (s)
+##### Iteration 179
+Percent actually necessary to pre-compute: 23.978999%
+PreComputed 23979, Elapsed Time: 0.29 (s)
+Cost = 0.2518676541056512, Correct(%) = 0.9151999999999155
+Elapsed Time: 249.738 (s)
+##### Iteration 180
+Percent actually necessary to pre-compute: 23.914000%
+PreComputed 23914, Elapsed Time: 0.258 (s)
+Cost = 0.2585030342382878, Correct(%) = 0.9190999999999151
+Elapsed Time: 251.3 (s)
+##### Iteration 181
+Percent actually necessary to pre-compute: 23.909999%
+PreComputed 23910, Elapsed Time: 0.355 (s)
+Cost = 0.24539262409069573, Correct(%) = 0.9207999999999149
+Elapsed Time: 252.816 (s)
+##### Iteration 182
+Percent actually necessary to pre-compute: 23.984000%
+PreComputed 23984, Elapsed Time: 0.303 (s)
+Cost = 0.2543611846202013, Correct(%) = 0.9162999999999154
+Elapsed Time: 254.262 (s)
+##### Iteration 183
+Percent actually necessary to pre-compute: 23.975000%
+PreComputed 23975, Elapsed Time: 0.262 (s)
+Cost = 0.2524062981736726, Correct(%) = 0.9217999999999148
+Elapsed Time: 255.739 (s)
+##### Iteration 184
+Percent actually necessary to pre-compute: 23.944999%
+PreComputed 23945, Elapsed Time: 0.293 (s)
+Cost = 0.24065699147227793, Correct(%) = 0.9220999999999148
+Elapsed Time: 257.325 (s)
+##### Iteration 185
+Percent actually necessary to pre-compute: 23.924001%
+PreComputed 23924, Elapsed Time: 0.251 (s)
+Cost = 0.2496991430814155, Correct(%) = 0.9210999999999149
+Elapsed Time: 258.717 (s)
+##### Iteration 186
+Percent actually necessary to pre-compute: 23.880000%
+PreComputed 23880, Elapsed Time: 0.313 (s)
+Cost = 0.24954956543248602, Correct(%) = 0.919699999999915
+Elapsed Time: 260.173 (s)
+##### Iteration 187
+Percent actually necessary to pre-compute: 23.921999%
+PreComputed 23922, Elapsed Time: 0.262 (s)
+Cost = 0.24006902137151642, Correct(%) = 0.9264999999999143
+Elapsed Time: 261.701 (s)
+##### Iteration 188
+Percent actually necessary to pre-compute: 23.961000%
+PreComputed 23961, Elapsed Time: 0.262 (s)
+Cost = 0.26442381062196246, Correct(%) = 0.9152999999999155
+Elapsed Time: 263.171 (s)
+##### Iteration 189
+Percent actually necessary to pre-compute: 23.938000%
+PreComputed 23938, Elapsed Time: 0.256 (s)
+Cost = 0.2694794653821827, Correct(%) = 0.9146999999999156
+Elapsed Time: 264.675 (s)
+##### Iteration 190
+Percent actually necessary to pre-compute: 24.119000%
+PreComputed 24119, Elapsed Time: 0.324 (s)
+Cost = 0.25277300702179256, Correct(%) = 0.9176999999999153
+Elapsed Time: 266.25 (s)
+##### Iteration 191
+Percent actually necessary to pre-compute: 24.003001%
+PreComputed 24003, Elapsed Time: 0.298 (s)
+Cost = 0.2663996067865464, Correct(%) = 0.910999999999916
+Elapsed Time: 267.701 (s)
+##### Iteration 192
+Percent actually necessary to pre-compute: 24.072000%
+PreComputed 24072, Elapsed Time: 0.264 (s)
+Cost = 0.2525117341292986, Correct(%) = 0.9193999999999151
+Elapsed Time: 269.098 (s)
+##### Iteration 193
+Percent actually necessary to pre-compute: 23.910999%
+PreComputed 23911, Elapsed Time: 0.263 (s)
+Cost = 0.25397420548623095, Correct(%) = 0.9176999999999153
+Elapsed Time: 270.457 (s)
+##### Iteration 194
+Percent actually necessary to pre-compute: 24.030000%
+PreComputed 24030, Elapsed Time: 0.26 (s)
+Cost = 0.27095966288626444, Correct(%) = 0.9156999999999155
+Elapsed Time: 271.983 (s)
+##### Iteration 195
+Percent actually necessary to pre-compute: 24.044000%
+PreComputed 24044, Elapsed Time: 0.3 (s)
+Cost = 0.24553982511733902, Correct(%) = 0.9212999999999149
+Elapsed Time: 273.56 (s)
+##### Iteration 196
+Percent actually necessary to pre-compute: 23.713000%
+PreComputed 23713, Elapsed Time: 0.355 (s)
+Cost = 0.24817278034036755, Correct(%) = 0.9221999999999148
+Elapsed Time: 275.103 (s)
+##### Iteration 197
+Percent actually necessary to pre-compute: 23.817000%
+PreComputed 23817, Elapsed Time: 0.3 (s)
+Cost = 0.22555856682264103, Correct(%) = 0.928699999999914
+Elapsed Time: 276.596 (s)
+##### Iteration 198
+Percent actually necessary to pre-compute: 23.953000%
+PreComputed 23953, Elapsed Time: 0.265 (s)
+Cost = 0.24318331254063816, Correct(%) = 0.9252999999999144
+Elapsed Time: 277.975 (s)
+##### Iteration 199
+Percent actually necessary to pre-compute: 23.935001%
+PreComputed 23935, Elapsed Time: 0.267 (s)
+Cost = 0.2410862074867374, Correct(%) = 0.9225999999999147
+Elapsed Time: 279.375 (s)
+Loading depparse model file: /u/nayans/NLP/output/set1/2000_model ... 
+PreComputed 72717, Elapsed Time: 0.787 (s)
+Initializing dependency parser ... done [1.2 sec].
+Test File: /u/nayans/NLP/data/wsj_test.conllx
+OOV Words: 6104 / 47416 = 12.87%
+UAS = 81.2482
+LAS = 77.9360
+DependencyParser parsed 47416 words in 1981 sentences in 4.8s at 9969.7 w/s, 416.5 sent/s.
+77.93596011887642
+Loading depparse model file: /u/nayans/NLP/output/set1/2000_model ... 
+PreComputed 72717, Elapsed Time: 0.835 (s)
+Initializing dependency parser ... done [1.2 sec].
+Test File: /u/nayans/NLP/data/brown_test.conllx
+OOV Words: 8538 / 47791 = 17.87%
+UAS = 77.7439
+LAS = 72.1927
+DependencyParser parsed 47791 words in 2421 sentences in 5.1s at 9310.5 w/s, 471.7 sent/s.
+72.19265696709306
+/u/nayans/NLP/output/set1/2000_seed.conllx contains sentences: 4421
+Train File: /u/nayans/NLP/output/set1/2000_seed.conllx
+Dev File: null
+Model File: /u/nayans/NLP/output/set1/2000_model
+Embedding File: penn-dependencybank/en-cw.txt
+Pre-trained Model File: /u/nayans/NLP/output/set1/2000_model
+################### Train
+#Trees: 4421
+0 tree(s) are illegal (0.00%).
+0 tree(s) are legal but have multiple roots (0.00%).
+8 tree(s) are legal but not projective (0.18%).
+###################
+#Word: 13026
+#POS:48
+#Label: 44
+###################
+#Transitions: 87
+#Labels: 43
+ROOTLABEL: root
+Embedding File penn-dependencybank/en-cw.txt: #Words = 130000, dim = 50
+Scaling word embeddings:(mean = -0.02, std = 1.06) -> (mean = 0.00, std = 1.00)Found embeddings: 11266 / 13026
+Loading pre-trained model file: /u/nayans/NLP/output/set1/2000_model ... 
+Copying parameters W1 && b1...
+Copying parameters W2...
+###################
+Generate training examples...
+1000 
+2000 
+3000 
+4000 
+class edu.stanford.nlp.parser.nndep.DependencyParser
+#Train Examples: 190928
+###################
+language = UniversalEnglish
+trainingThreads = 1
+wordCutOff = 1
+initRange = 0.010
+maxIter = 200
+batchSize = 10000
+adaEps = 1.0e-06
+adaAlpha = 0.010
+regParameter = 1.0e-08
+dropProb = 0.50
+hiddenSize = 200
+embeddingSize = 50
+numPreComputed = 100000
+evalPerIter = 100
+clearGradientsPerIter = 0
+saveItermediate = true
+unlabeled = false
+cPOS = false
+noPunc = true
+doWordEmbeddingGradUpdate = true
+##### Iteration 0
+Percent actually necessary to pre-compute: 23.825000%
+PreComputed 23825, Elapsed Time: 0.26 (s)
+Cost = 3.747433443607604, Correct(%) = 0.7245999999999365
+Elapsed Time: 1.501 (s)
+##### Iteration 1
+Percent actually necessary to pre-compute: 24.232000%
+PreComputed 24232, Elapsed Time: 0.263 (s)
+Cost = 1.4968289191420432, Correct(%) = 0.6728999999999422
+Elapsed Time: 2.945 (s)
+##### Iteration 2
+Percent actually necessary to pre-compute: 23.977999%
+PreComputed 23978, Elapsed Time: 0.275 (s)
+Cost = 3.4351094952498973, Correct(%) = 0.60199999999995
+Elapsed Time: 4.396 (s)
+##### Iteration 3
+Percent actually necessary to pre-compute: 24.079999%
+PreComputed 24080, Elapsed Time: 0.284 (s)
+Cost = 1.6369048878539945, Correct(%) = 0.629799999999947
+Elapsed Time: 5.853 (s)
+##### Iteration 4
+Percent actually necessary to pre-compute: 23.959000%
+PreComputed 23959, Elapsed Time: 0.26 (s)
+Cost = 0.9500067810023066, Correct(%) = 0.765399999999932
+Elapsed Time: 7.281 (s)
+##### Iteration 5
+Percent actually necessary to pre-compute: 23.947001%
+PreComputed 23947, Elapsed Time: 0.261 (s)
+Cost = 0.8670689939106299, Correct(%) = 0.7856999999999298
+Elapsed Time: 8.721 (s)
+##### Iteration 6
+Percent actually necessary to pre-compute: 24.105000%
+PreComputed 24105, Elapsed Time: 0.263 (s)
+Cost = 0.8130844245426745, Correct(%) = 0.7913999999999292
+Elapsed Time: 10.15 (s)
+##### Iteration 7
+Percent actually necessary to pre-compute: 24.009000%
+PreComputed 24009, Elapsed Time: 0.263 (s)
+Cost = 0.7389338341327656, Correct(%) = 0.8068999999999275
+Elapsed Time: 11.572 (s)
+##### Iteration 8
+Percent actually necessary to pre-compute: 23.963000%
+PreComputed 23963, Elapsed Time: 0.26 (s)
+Cost = 0.6613430222501636, Correct(%) = 0.8182999999999262
+Elapsed Time: 12.998 (s)
+##### Iteration 9
+Percent actually necessary to pre-compute: 23.984000%
+PreComputed 23984, Elapsed Time: 0.262 (s)
+Cost = 0.6425982343760088, Correct(%) = 0.8263999999999253
+Elapsed Time: 15.112 (s)
+##### Iteration 10
+Percent actually necessary to pre-compute: 24.286000%
+PreComputed 24286, Elapsed Time: 0.266 (s)
+Cost = 0.5891061459864184, Correct(%) = 0.8360999999999242
+Elapsed Time: 16.594 (s)
+##### Iteration 11
+Percent actually necessary to pre-compute: 24.077000%
+PreComputed 24077, Elapsed Time: 0.266 (s)
+Cost = 0.6023168655209702, Correct(%) = 0.8357999999999243
+Elapsed Time: 18.751 (s)
+##### Iteration 12
+Percent actually necessary to pre-compute: 23.892000%
+PreComputed 23892, Elapsed Time: 0.26 (s)
+Cost = 0.5684040953538347, Correct(%) = 0.8407999999999237
+Elapsed Time: 20.163 (s)
+##### Iteration 13
+Percent actually necessary to pre-compute: 23.962000%
+PreComputed 23962, Elapsed Time: 0.259 (s)
+Cost = 0.5450583745916554, Correct(%) = 0.8462999999999231
+Elapsed Time: 21.699 (s)
+##### Iteration 14
+Percent actually necessary to pre-compute: 24.056999%
+PreComputed 24057, Elapsed Time: 0.262 (s)
+Cost = 0.5167464149968489, Correct(%) = 0.8520999999999225
+Elapsed Time: 23.777 (s)
+##### Iteration 15
+Percent actually necessary to pre-compute: 23.964000%
+PreComputed 23964, Elapsed Time: 0.262 (s)
+Cost = 0.49755131753077997, Correct(%) = 0.8589999999999217
+Elapsed Time: 25.206 (s)
+##### Iteration 16
+Percent actually necessary to pre-compute: 23.965999%
+PreComputed 23966, Elapsed Time: 0.266 (s)
+Cost = 0.4822921531907728, Correct(%) = 0.8636999999999212
+Elapsed Time: 26.625 (s)
+##### Iteration 17
+Percent actually necessary to pre-compute: 24.110000%
+PreComputed 24110, Elapsed Time: 0.263 (s)
+Cost = 0.4785389934787233, Correct(%) = 0.8629999999999213
+Elapsed Time: 28.043 (s)
+##### Iteration 18
+Percent actually necessary to pre-compute: 23.830000%
+PreComputed 23830, Elapsed Time: 0.258 (s)
+Cost = 0.4761094608873315, Correct(%) = 0.8638999999999212
+Elapsed Time: 29.473 (s)
+##### Iteration 19
+Percent actually necessary to pre-compute: 24.177000%
+PreComputed 24177, Elapsed Time: 0.264 (s)
+Cost = 0.4567391815335084, Correct(%) = 0.8643999999999211
+Elapsed Time: 30.878 (s)
+##### Iteration 20
+Percent actually necessary to pre-compute: 24.079999%
+PreComputed 24080, Elapsed Time: 0.263 (s)
+Cost = 0.4424413655795013, Correct(%) = 0.8706999999999204
+Elapsed Time: 32.391 (s)
+##### Iteration 21
+Percent actually necessary to pre-compute: 24.105000%
+PreComputed 24105, Elapsed Time: 0.301 (s)
+Cost = 0.441370020414178, Correct(%) = 0.8684999999999207
+Elapsed Time: 33.83 (s)
+##### Iteration 22
+Percent actually necessary to pre-compute: 23.895000%
+PreComputed 23895, Elapsed Time: 0.26 (s)
+Cost = 0.4169959621675853, Correct(%) = 0.8764999999999198
+Elapsed Time: 35.227 (s)
+##### Iteration 23
+Percent actually necessary to pre-compute: 23.986000%
+PreComputed 23986, Elapsed Time: 0.262 (s)
+Cost = 0.42920394064516143, Correct(%) = 0.8767999999999198
+Elapsed Time: 36.628 (s)
+##### Iteration 24
+Percent actually necessary to pre-compute: 24.059001%
+PreComputed 24059, Elapsed Time: 0.259 (s)
+Cost = 0.418639285986205, Correct(%) = 0.8772999999999197
+Elapsed Time: 37.997 (s)
+##### Iteration 25
+Percent actually necessary to pre-compute: 24.107000%
+PreComputed 24107, Elapsed Time: 0.317 (s)
+Cost = 0.3953332506002938, Correct(%) = 0.8804999999999193
+Elapsed Time: 39.41 (s)
+##### Iteration 26
+Percent actually necessary to pre-compute: 24.063000%
+PreComputed 24063, Elapsed Time: 0.334 (s)
+Cost = 0.37737864886378514, Correct(%) = 0.8849999999999189
+Elapsed Time: 40.846 (s)
+##### Iteration 27
+Percent actually necessary to pre-compute: 24.263000%
+PreComputed 24263, Elapsed Time: 0.336 (s)
+Cost = 0.38755251854819706, Correct(%) = 0.8801999999999194
+Elapsed Time: 42.37 (s)
+##### Iteration 28
+Percent actually necessary to pre-compute: 24.190000%
+PreComputed 24190, Elapsed Time: 0.3 (s)
+Cost = 0.3828694893338719, Correct(%) = 0.8871999999999186
+Elapsed Time: 43.809 (s)
+##### Iteration 29
+Percent actually necessary to pre-compute: 24.092001%
+PreComputed 24092, Elapsed Time: 0.259 (s)
+Cost = 0.3656739821633528, Correct(%) = 0.8917999999999181
+Elapsed Time: 45.211 (s)
+##### Iteration 30
+Percent actually necessary to pre-compute: 24.038000%
+PreComputed 24038, Elapsed Time: 0.262 (s)
+Cost = 0.38137767883173357, Correct(%) = 0.8845999999999189
+Elapsed Time: 46.626 (s)
+##### Iteration 31
+Percent actually necessary to pre-compute: 24.070001%
+PreComputed 24070, Elapsed Time: 0.265 (s)
+Cost = 0.3859248251319007, Correct(%) = 0.8862999999999187
+Elapsed Time: 48.062 (s)
+##### Iteration 32
+Percent actually necessary to pre-compute: 23.943999%
+PreComputed 23944, Elapsed Time: 0.26 (s)
+Cost = 0.36346215760538547, Correct(%) = 0.8920999999999181
+Elapsed Time: 49.481 (s)
+##### Iteration 33
+Percent actually necessary to pre-compute: 24.013001%
+PreComputed 24013, Elapsed Time: 0.263 (s)
+Cost = 0.37500925785972816, Correct(%) = 0.8912999999999182
+Elapsed Time: 50.922 (s)
+##### Iteration 34
+Percent actually necessary to pre-compute: 23.980001%
+PreComputed 23980, Elapsed Time: 0.264 (s)
+Cost = 0.36619521036818364, Correct(%) = 0.8877999999999185
+Elapsed Time: 52.366 (s)
+##### Iteration 35
+Percent actually necessary to pre-compute: 24.205001%
+PreComputed 24205, Elapsed Time: 0.262 (s)
+Cost = 0.3461699762255643, Correct(%) = 0.8951999999999177
+Elapsed Time: 53.787 (s)
+##### Iteration 36
+Percent actually necessary to pre-compute: 24.117000%
+PreComputed 24117, Elapsed Time: 0.261 (s)
+Cost = 0.3514594763753103, Correct(%) = 0.8952999999999177
+Elapsed Time: 55.215 (s)
+##### Iteration 37
+Percent actually necessary to pre-compute: 24.021000%
+PreComputed 24021, Elapsed Time: 0.261 (s)
+Cost = 0.3359249077237199, Correct(%) = 0.9003999999999172
+Elapsed Time: 56.631 (s)
+##### Iteration 38
+Percent actually necessary to pre-compute: 23.862000%
+PreComputed 23862, Elapsed Time: 0.261 (s)
+Cost = 0.34926335468544184, Correct(%) = 0.8952999999999177
+Elapsed Time: 58.042 (s)
+##### Iteration 39
+Percent actually necessary to pre-compute: 23.935001%
+PreComputed 23935, Elapsed Time: 0.257 (s)
+Cost = 0.3566303945992517, Correct(%) = 0.8908999999999182
+Elapsed Time: 59.473 (s)
+##### Iteration 40
+Percent actually necessary to pre-compute: 24.055000%
+PreComputed 24055, Elapsed Time: 0.281 (s)
+Cost = 0.3468140638756941, Correct(%) = 0.8947999999999178
+Elapsed Time: 60.968 (s)
+##### Iteration 41
+Percent actually necessary to pre-compute: 24.106000%
+PreComputed 24106, Elapsed Time: 0.303 (s)
+Cost = 0.3400514388210108, Correct(%) = 0.8956999999999177
+Elapsed Time: 62.427 (s)
+##### Iteration 42
+Percent actually necessary to pre-compute: 23.925000%
+PreComputed 23925, Elapsed Time: 0.262 (s)
+Cost = 0.32428047198362725, Correct(%) = 0.8997999999999172
+Elapsed Time: 63.863 (s)
+##### Iteration 43
+Percent actually necessary to pre-compute: 24.180000%
+PreComputed 24180, Elapsed Time: 0.265 (s)
+Cost = 0.3317051623646819, Correct(%) = 0.8987999999999173
+Elapsed Time: 65.295 (s)
+##### Iteration 44
+Percent actually necessary to pre-compute: 24.135999%
+PreComputed 24136, Elapsed Time: 0.262 (s)
+Cost = 0.34142394004135485, Correct(%) = 0.8975999999999175
+Elapsed Time: 66.716 (s)
+##### Iteration 45
+Percent actually necessary to pre-compute: 24.101000%
+PreComputed 24101, Elapsed Time: 0.265 (s)
+Cost = 0.33776312060774666, Correct(%) = 0.8985999999999174
+Elapsed Time: 68.146 (s)
+##### Iteration 46
+Percent actually necessary to pre-compute: 24.098000%
+PreComputed 24098, Elapsed Time: 0.265 (s)
+Cost = 0.33843708881561957, Correct(%) = 0.8981999999999174
+Elapsed Time: 69.686 (s)
+##### Iteration 47
+Percent actually necessary to pre-compute: 24.089999%
+PreComputed 24090, Elapsed Time: 0.264 (s)
+Cost = 0.32362155357346584, Correct(%) = 0.9009999999999171
+Elapsed Time: 71.262 (s)
+##### Iteration 48
+Percent actually necessary to pre-compute: 24.040000%
+PreComputed 24040, Elapsed Time: 0.305 (s)
+Cost = 0.30874012022592723, Correct(%) = 0.9047999999999167
+Elapsed Time: 72.72 (s)
+##### Iteration 49
+Percent actually necessary to pre-compute: 23.887999%
+PreComputed 23888, Elapsed Time: 0.266 (s)
+Cost = 0.3267690071793468, Correct(%) = 0.9003999999999172
+Elapsed Time: 74.143 (s)
+##### Iteration 50
+Percent actually necessary to pre-compute: 24.290000%
+PreComputed 24290, Elapsed Time: 0.265 (s)
+Cost = 0.3397489264518781, Correct(%) = 0.8973999999999175
+Elapsed Time: 75.553 (s)
+##### Iteration 51
+Percent actually necessary to pre-compute: 23.937000%
+PreComputed 23937, Elapsed Time: 0.26 (s)
+Cost = 0.3220203913561364, Correct(%) = 0.902199999999917
+Elapsed Time: 76.962 (s)
+##### Iteration 52
+Percent actually necessary to pre-compute: 23.822001%
+PreComputed 23822, Elapsed Time: 0.261 (s)
+Cost = 0.3098651044055618, Correct(%) = 0.9040999999999167
+Elapsed Time: 78.424 (s)
+##### Iteration 53
+Percent actually necessary to pre-compute: 23.966999%
+PreComputed 23967, Elapsed Time: 0.26 (s)
+Cost = 0.31529017170451556, Correct(%) = 0.9039999999999168
+Elapsed Time: 79.946 (s)
+##### Iteration 54
+Percent actually necessary to pre-compute: 23.999999%
+PreComputed 24000, Elapsed Time: 0.266 (s)
+Cost = 0.3122199129146985, Correct(%) = 0.9055999999999166
+Elapsed Time: 81.498 (s)
+##### Iteration 55
+Percent actually necessary to pre-compute: 23.907000%
+PreComputed 23907, Elapsed Time: 0.262 (s)
+Cost = 0.3217717346474372, Correct(%) = 0.9064999999999165
+Elapsed Time: 83.07 (s)
+##### Iteration 56
+Percent actually necessary to pre-compute: 23.970000%
+PreComputed 23970, Elapsed Time: 0.3 (s)
+Cost = 0.3181791583724558, Correct(%) = 0.8987999999999173
+Elapsed Time: 84.525 (s)
+##### Iteration 57
+Percent actually necessary to pre-compute: 24.052000%
+PreComputed 24052, Elapsed Time: 0.261 (s)
+Cost = 0.31663154097059204, Correct(%) = 0.9061999999999165
+Elapsed Time: 85.857 (s)
+##### Iteration 58
+Percent actually necessary to pre-compute: 24.146999%
+PreComputed 24147, Elapsed Time: 0.272 (s)
+Cost = 0.3219930319285829, Correct(%) = 0.9007999999999171
+Elapsed Time: 87.262 (s)
+##### Iteration 59
+Percent actually necessary to pre-compute: 23.988000%
+PreComputed 23988, Elapsed Time: 0.315 (s)
+Cost = 0.29686320698675883, Correct(%) = 0.9094999999999162
+Elapsed Time: 88.669 (s)
+##### Iteration 60
+Percent actually necessary to pre-compute: 24.120000%
+PreComputed 24120, Elapsed Time: 0.321 (s)
+Cost = 0.31162393235021907, Correct(%) = 0.9068999999999164
+Elapsed Time: 90.09 (s)
+##### Iteration 61
+Percent actually necessary to pre-compute: 24.108000%
+PreComputed 24108, Elapsed Time: 0.322 (s)
+Cost = 0.2980965955812508, Correct(%) = 0.9043999999999167
+Elapsed Time: 91.521 (s)
+##### Iteration 62
+Percent actually necessary to pre-compute: 23.902000%
+PreComputed 23902, Elapsed Time: 0.326 (s)
+Cost = 0.2820355474764701, Correct(%) = 0.9130999999999158
+Elapsed Time: 92.938 (s)
+##### Iteration 63
+Percent actually necessary to pre-compute: 23.981000%
+PreComputed 23981, Elapsed Time: 0.323 (s)
+Cost = 0.3165484997726874, Correct(%) = 0.9031999999999168
+Elapsed Time: 94.376 (s)
+##### Iteration 64
+Percent actually necessary to pre-compute: 24.072000%
+PreComputed 24072, Elapsed Time: 0.317 (s)
+Cost = 0.2933182979734714, Correct(%) = 0.9092999999999162
+Elapsed Time: 95.864 (s)
+##### Iteration 65
+Percent actually necessary to pre-compute: 24.020000%
+PreComputed 24020, Elapsed Time: 0.333 (s)
+Cost = 0.2986083587791323, Correct(%) = 0.9113999999999159
+Elapsed Time: 97.297 (s)
+##### Iteration 66
+Percent actually necessary to pre-compute: 24.092001%
+PreComputed 24092, Elapsed Time: 0.358 (s)
+Cost = 0.28464838909816237, Correct(%) = 0.910799999999916
+Elapsed Time: 98.77 (s)
+##### Iteration 67
+Percent actually necessary to pre-compute: 24.176000%
+PreComputed 24176, Elapsed Time: 0.338 (s)
+Cost = 0.28700680916754545, Correct(%) = 0.9099999999999161
+Elapsed Time: 100.208 (s)
+##### Iteration 68
+Percent actually necessary to pre-compute: 24.146000%
+PreComputed 24146, Elapsed Time: 0.263 (s)
+Cost = 0.2966999019945262, Correct(%) = 0.9124999999999158
+Elapsed Time: 101.614 (s)
+##### Iteration 69
+Percent actually necessary to pre-compute: 24.032000%
+PreComputed 24032, Elapsed Time: 0.261 (s)
+Cost = 0.28520578205812325, Correct(%) = 0.9089999999999162
+Elapsed Time: 103.044 (s)
+##### Iteration 70
+Percent actually necessary to pre-compute: 24.023999%
+PreComputed 24024, Elapsed Time: 0.266 (s)
+Cost = 0.2882718595180228, Correct(%) = 0.9089999999999162
+Elapsed Time: 104.482 (s)
+##### Iteration 71
+Percent actually necessary to pre-compute: 24.067000%
+PreComputed 24067, Elapsed Time: 0.265 (s)
+Cost = 0.2855237160629937, Correct(%) = 0.9115999999999159
+Elapsed Time: 106.612 (s)
+##### Iteration 72
+Percent actually necessary to pre-compute: 24.071001%
+PreComputed 24071, Elapsed Time: 0.259 (s)
+Cost = 0.27946522259858936, Correct(%) = 0.9123999999999158
+Elapsed Time: 107.988 (s)
+##### Iteration 73
+Percent actually necessary to pre-compute: 24.058001%
+PreComputed 24058, Elapsed Time: 0.259 (s)
+Cost = 0.2851721428553387, Correct(%) = 0.9119999999999159
+Elapsed Time: 109.397 (s)
+##### Iteration 74
+Percent actually necessary to pre-compute: 24.084000%
+PreComputed 24084, Elapsed Time: 0.263 (s)
+Cost = 0.2908325050925573, Correct(%) = 0.9074999999999164
+Elapsed Time: 110.831 (s)
+##### Iteration 75
+Percent actually necessary to pre-compute: 23.982000%
+PreComputed 23982, Elapsed Time: 0.262 (s)
+Cost = 0.2946016915229182, Correct(%) = 0.9085999999999163
+Elapsed Time: 112.931 (s)
+##### Iteration 76
+Percent actually necessary to pre-compute: 24.155000%
+PreComputed 24155, Elapsed Time: 0.261 (s)
+Cost = 0.27414148714748704, Correct(%) = 0.9132999999999157
+Elapsed Time: 114.308 (s)
+##### Iteration 77
+Percent actually necessary to pre-compute: 23.999000%
+PreComputed 23999, Elapsed Time: 0.261 (s)
+Cost = 0.2759072018960373, Correct(%) = 0.910499999999916
+Elapsed Time: 115.734 (s)
+##### Iteration 78
+Percent actually necessary to pre-compute: 23.954999%
+PreComputed 23955, Elapsed Time: 0.263 (s)
+Cost = 0.277380824066461, Correct(%) = 0.9126999999999158
+Elapsed Time: 117.174 (s)
+##### Iteration 79
+Percent actually necessary to pre-compute: 24.096000%
+PreComputed 24096, Elapsed Time: 0.26 (s)
+Cost = 0.27105052883951636, Correct(%) = 0.9143999999999156
+Elapsed Time: 118.625 (s)
+##### Iteration 80
+Percent actually necessary to pre-compute: 23.991001%
+PreComputed 23991, Elapsed Time: 0.26 (s)
+Cost = 0.29157821953042673, Correct(%) = 0.9064999999999165
+Elapsed Time: 120.944 (s)
+##### Iteration 81
+Percent actually necessary to pre-compute: 24.089999%
+PreComputed 24090, Elapsed Time: 0.261 (s)
+Cost = 0.27752372621267885, Correct(%) = 0.9139999999999157
+Elapsed Time: 122.365 (s)
+##### Iteration 82
+Percent actually necessary to pre-compute: 23.842999%
+PreComputed 23843, Elapsed Time: 0.257 (s)
+Cost = 0.2664893534687138, Correct(%) = 0.9155999999999155
+Elapsed Time: 123.802 (s)
+##### Iteration 83
+Percent actually necessary to pre-compute: 24.164000%
+PreComputed 24164, Elapsed Time: 0.261 (s)
+Cost = 0.2609436496365168, Correct(%) = 0.9179999999999152
+Elapsed Time: 125.217 (s)
+##### Iteration 84
+Percent actually necessary to pre-compute: 24.160001%
+PreComputed 24160, Elapsed Time: 0.263 (s)
+Cost = 0.2765180970761824, Correct(%) = 0.9181999999999152
+Elapsed Time: 126.656 (s)
+##### Iteration 85
+Percent actually necessary to pre-compute: 24.018000%
+PreComputed 24018, Elapsed Time: 0.262 (s)
+Cost = 0.27159445406845734, Correct(%) = 0.9102999999999161
+Elapsed Time: 128.095 (s)
+##### Iteration 86
+Percent actually necessary to pre-compute: 23.976000%
+PreComputed 23976, Elapsed Time: 0.26 (s)
+Cost = 0.27709611523688704, Correct(%) = 0.9122999999999158
+Elapsed Time: 130.211 (s)
+##### Iteration 87
+Percent actually necessary to pre-compute: 24.185000%
+PreComputed 24185, Elapsed Time: 0.266 (s)
+Cost = 0.28582519195721434, Correct(%) = 0.9128999999999158
+Elapsed Time: 131.616 (s)
+##### Iteration 88
+Percent actually necessary to pre-compute: 24.033999%
+PreComputed 24034, Elapsed Time: 0.261 (s)
+Cost = 0.26848288911345625, Correct(%) = 0.9164999999999154
+Elapsed Time: 133.033 (s)
+##### Iteration 89
+Percent actually necessary to pre-compute: 24.040000%
+PreComputed 24040, Elapsed Time: 0.261 (s)
+Cost = 0.264312924138545, Correct(%) = 0.9193999999999151
+Elapsed Time: 134.473 (s)
+##### Iteration 90
+Percent actually necessary to pre-compute: 24.266000%
+PreComputed 24266, Elapsed Time: 0.264 (s)
+Cost = 0.2568872272028373, Correct(%) = 0.9190999999999151
+Elapsed Time: 135.891 (s)
+##### Iteration 91
+Percent actually necessary to pre-compute: 24.033999%
+PreComputed 24034, Elapsed Time: 0.261 (s)
+Cost = 0.24958091762009013, Correct(%) = 0.9220999999999148
+Elapsed Time: 137.338 (s)
+##### Iteration 92
+Percent actually necessary to pre-compute: 24.156000%
+PreComputed 24156, Elapsed Time: 0.266 (s)
+Cost = 0.26594072942175573, Correct(%) = 0.9150999999999155
+Elapsed Time: 138.757 (s)
+##### Iteration 93
+Percent actually necessary to pre-compute: 23.934001%
+PreComputed 23934, Elapsed Time: 0.262 (s)
+Cost = 0.26710539220633733, Correct(%) = 0.9171999999999153
+Elapsed Time: 140.158 (s)
+##### Iteration 94
+Percent actually necessary to pre-compute: 23.981000%
+PreComputed 23981, Elapsed Time: 0.266 (s)
+Cost = 0.26668048522962934, Correct(%) = 0.9152999999999155
+Elapsed Time: 141.507 (s)
+##### Iteration 95
+Percent actually necessary to pre-compute: 24.023999%
+PreComputed 24024, Elapsed Time: 0.269 (s)
+Cost = 0.2579079566739839, Correct(%) = 0.9162999999999154
+Elapsed Time: 142.901 (s)
+##### Iteration 96
+Percent actually necessary to pre-compute: 23.995000%
+PreComputed 23995, Elapsed Time: 0.326 (s)
+Cost = 0.26294312579407253, Correct(%) = 0.9171999999999153
+Elapsed Time: 144.313 (s)
+##### Iteration 97
+Percent actually necessary to pre-compute: 23.943000%
+PreComputed 23943, Elapsed Time: 0.329 (s)
+Cost = 0.25687644264792536, Correct(%) = 0.919999999999915
+Elapsed Time: 145.726 (s)
+##### Iteration 98
+Percent actually necessary to pre-compute: 23.968001%
+PreComputed 23968, Elapsed Time: 0.261 (s)
+Cost = 0.2561256809680015, Correct(%) = 0.9185999999999152
+Elapsed Time: 147.15 (s)
+##### Iteration 99
+Percent actually necessary to pre-compute: 24.045999%
+PreComputed 24046, Elapsed Time: 0.264 (s)
+Cost = 0.2546698678841332, Correct(%) = 0.9217999999999148
+Elapsed Time: 148.584 (s)
+##### Iteration 100
+Percent actually necessary to pre-compute: 24.102999%
+PreComputed 24103, Elapsed Time: 0.267 (s)
+Cost = 0.25912354498728724, Correct(%) = 0.9180999999999152
+Elapsed Time: 150.013 (s)
+##### Iteration 101
+Percent actually necessary to pre-compute: 23.962000%
+PreComputed 23962, Elapsed Time: 0.26 (s)
+Cost = 0.2714634326351043, Correct(%) = 0.9137999999999157
+Elapsed Time: 151.455 (s)
+##### Iteration 102
+Percent actually necessary to pre-compute: 24.077000%
+PreComputed 24077, Elapsed Time: 0.263 (s)
+Cost = 0.2564519169360061, Correct(%) = 0.9178999999999152
+Elapsed Time: 152.918 (s)
+##### Iteration 103
+Percent actually necessary to pre-compute: 24.078999%
+PreComputed 24079, Elapsed Time: 0.263 (s)
+Cost = 0.2505179694278994, Correct(%) = 0.919899999999915
+Elapsed Time: 154.353 (s)
+##### Iteration 104
+Percent actually necessary to pre-compute: 23.996000%
+PreComputed 23996, Elapsed Time: 0.264 (s)
+Cost = 0.2620302750055632, Correct(%) = 0.9192999999999151
+Elapsed Time: 155.786 (s)
+##### Iteration 105
+Percent actually necessary to pre-compute: 24.041000%
+PreComputed 24041, Elapsed Time: 0.261 (s)
+Cost = 0.2613077859614363, Correct(%) = 0.9172999999999153
+Elapsed Time: 157.207 (s)
+##### Iteration 106
+Percent actually necessary to pre-compute: 24.011999%
+PreComputed 24012, Elapsed Time: 0.26 (s)
+Cost = 0.2641927801173928, Correct(%) = 0.9148999999999156
+Elapsed Time: 158.633 (s)
+##### Iteration 107
+Percent actually necessary to pre-compute: 24.056999%
+PreComputed 24057, Elapsed Time: 0.261 (s)
+Cost = 0.2650241852228224, Correct(%) = 0.9163999999999154
+Elapsed Time: 160.055 (s)
+##### Iteration 108
+Percent actually necessary to pre-compute: 23.999999%
+PreComputed 24000, Elapsed Time: 0.305 (s)
+Cost = 0.24309217319856966, Correct(%) = 0.920199999999915
+Elapsed Time: 161.573 (s)
+##### Iteration 109
+Percent actually necessary to pre-compute: 24.015000%
+PreComputed 24015, Elapsed Time: 0.25 (s)
+Cost = 0.2603495505676357, Correct(%) = 0.9207999999999149
+Elapsed Time: 163.007 (s)
+##### Iteration 110
+Percent actually necessary to pre-compute: 24.027000%
+PreComputed 24027, Elapsed Time: 0.262 (s)
+Cost = 0.26679088046689864, Correct(%) = 0.9169999999999153
+Elapsed Time: 164.465 (s)
+##### Iteration 111
+Percent actually necessary to pre-compute: 24.090999%
+PreComputed 24091, Elapsed Time: 0.263 (s)
+Cost = 0.25285725598181114, Correct(%) = 0.9189999999999151
+Elapsed Time: 165.921 (s)
+##### Iteration 112
+Percent actually necessary to pre-compute: 23.824000%
+PreComputed 23824, Elapsed Time: 0.259 (s)
+Cost = 0.24009980414052673, Correct(%) = 0.9213999999999148
+Elapsed Time: 167.327 (s)
+##### Iteration 113
+Percent actually necessary to pre-compute: 23.909999%
+PreComputed 23910, Elapsed Time: 0.26 (s)
+Cost = 0.25190890740894417, Correct(%) = 0.9217999999999148
+Elapsed Time: 168.725 (s)
+##### Iteration 114
+Percent actually necessary to pre-compute: 24.022999%
+PreComputed 24023, Elapsed Time: 0.263 (s)
+Cost = 0.26152928982775514, Correct(%) = 0.9167999999999153
+Elapsed Time: 170.174 (s)
+##### Iteration 115
+Percent actually necessary to pre-compute: 23.964000%
+PreComputed 23964, Elapsed Time: 0.265 (s)
+Cost = 0.24706197482229117, Correct(%) = 0.9211999999999149
+Elapsed Time: 171.577 (s)
+##### Iteration 116
+Percent actually necessary to pre-compute: 23.959000%
+PreComputed 23959, Elapsed Time: 0.258 (s)
+Cost = 0.2629053967182388, Correct(%) = 0.9163999999999154
+Elapsed Time: 173.0 (s)
+##### Iteration 117
+Percent actually necessary to pre-compute: 24.033000%
+PreComputed 24033, Elapsed Time: 0.252 (s)
+Cost = 0.2551463782834773, Correct(%) = 0.9185999999999152
+Elapsed Time: 174.398 (s)
+##### Iteration 118
+Percent actually necessary to pre-compute: 24.214000%
+PreComputed 24214, Elapsed Time: 0.266 (s)
+Cost = 0.2443153471696567, Correct(%) = 0.9233999999999146
+Elapsed Time: 175.812 (s)
+##### Iteration 119
+Percent actually necessary to pre-compute: 24.210000%
+PreComputed 24210, Elapsed Time: 0.266 (s)
+Cost = 0.2420711669242399, Correct(%) = 0.920199999999915
+Elapsed Time: 177.293 (s)
+##### Iteration 120
+Percent actually necessary to pre-compute: 24.214999%
+PreComputed 24215, Elapsed Time: 0.303 (s)
+Cost = 0.24259580382813833, Correct(%) = 0.9243999999999145
+Elapsed Time: 178.826 (s)
+##### Iteration 121
+Percent actually necessary to pre-compute: 24.088000%
+PreComputed 24088, Elapsed Time: 0.299 (s)
+Cost = 0.2543192867021927, Correct(%) = 0.919799999999915
+Elapsed Time: 180.272 (s)
+##### Iteration 122
+Percent actually necessary to pre-compute: 24.101999%
+PreComputed 24102, Elapsed Time: 0.262 (s)
+Cost = 0.24429235274708405, Correct(%) = 0.9234999999999146
+Elapsed Time: 181.672 (s)
+##### Iteration 123
+Percent actually necessary to pre-compute: 24.276000%
+PreComputed 24276, Elapsed Time: 0.26 (s)
+Cost = 0.2596246371490206, Correct(%) = 0.920099999999915
+Elapsed Time: 183.063 (s)
+##### Iteration 124
+Percent actually necessary to pre-compute: 24.124999%
+PreComputed 24125, Elapsed Time: 0.263 (s)
+Cost = 0.2393109643094676, Correct(%) = 0.9232999999999146
+Elapsed Time: 184.502 (s)
+##### Iteration 125
+Percent actually necessary to pre-compute: 23.897000%
+PreComputed 23897, Elapsed Time: 0.263 (s)
+Cost = 0.2440596438199138, Correct(%) = 0.9225999999999147
+Elapsed Time: 185.85 (s)
+##### Iteration 126
+Percent actually necessary to pre-compute: 23.986000%
+PreComputed 23986, Elapsed Time: 0.254 (s)
+Cost = 0.24501616756707645, Correct(%) = 0.9224999999999147
+Elapsed Time: 187.242 (s)
+##### Iteration 127
+Percent actually necessary to pre-compute: 24.115001%
+PreComputed 24115, Elapsed Time: 0.314 (s)
+Cost = 0.25606688626120033, Correct(%) = 0.919599999999915
+Elapsed Time: 188.691 (s)
+##### Iteration 128
+Percent actually necessary to pre-compute: 24.100000%
+PreComputed 24100, Elapsed Time: 0.317 (s)
+Cost = 0.24695214652638053, Correct(%) = 0.9231999999999146
+Elapsed Time: 190.103 (s)
+##### Iteration 129
+Percent actually necessary to pre-compute: 23.761000%
+PreComputed 23761, Elapsed Time: 0.317 (s)
+Cost = 0.2404505827502031, Correct(%) = 0.9213999999999148
+Elapsed Time: 191.502 (s)
+##### Iteration 130
+Percent actually necessary to pre-compute: 23.923001%
+PreComputed 23923, Elapsed Time: 0.328 (s)
+Cost = 0.23866651874899744, Correct(%) = 0.9255999999999144
+Elapsed Time: 192.964 (s)
+##### Iteration 131
+Percent actually necessary to pre-compute: 24.044999%
+PreComputed 24045, Elapsed Time: 0.333 (s)
+Cost = 0.24126667797534307, Correct(%) = 0.9212999999999149
+Elapsed Time: 194.399 (s)
+##### Iteration 132
+Percent actually necessary to pre-compute: 23.928000%
+PreComputed 23928, Elapsed Time: 0.334 (s)
+Cost = 0.2371361420216212, Correct(%) = 0.9249999999999144
+Elapsed Time: 195.831 (s)
+##### Iteration 133
+Percent actually necessary to pre-compute: 24.022000%
+PreComputed 24022, Elapsed Time: 0.346 (s)
+Cost = 0.23047280836558964, Correct(%) = 0.9245999999999145
+Elapsed Time: 197.27 (s)
+##### Iteration 134
+Percent actually necessary to pre-compute: 23.917000%
+PreComputed 23917, Elapsed Time: 0.327 (s)
+Cost = 0.23999497122196306, Correct(%) = 0.9254999999999144
+Elapsed Time: 198.678 (s)
+##### Iteration 135
+Percent actually necessary to pre-compute: 23.953000%
+PreComputed 23953, Elapsed Time: 0.37 (s)
+Cost = 0.2400515901615695, Correct(%) = 0.9253999999999144
+Elapsed Time: 200.261 (s)
+##### Iteration 136
+Percent actually necessary to pre-compute: 23.965999%
+PreComputed 23966, Elapsed Time: 0.337 (s)
+Cost = 0.2376643038813335, Correct(%) = 0.9221999999999148
+Elapsed Time: 201.759 (s)
+##### Iteration 137
+Percent actually necessary to pre-compute: 24.095000%
+PreComputed 24095, Elapsed Time: 0.362 (s)
+Cost = 0.23102193594345485, Correct(%) = 0.9248999999999145
+Elapsed Time: 203.266 (s)
+##### Iteration 138
+Percent actually necessary to pre-compute: 23.969001%
+PreComputed 23969, Elapsed Time: 0.346 (s)
+Cost = 0.23834537404024383, Correct(%) = 0.919999999999915
+Elapsed Time: 204.803 (s)
+##### Iteration 139
+Percent actually necessary to pre-compute: 24.141000%
+PreComputed 24141, Elapsed Time: 0.354 (s)
+Cost = 0.23175606406869434, Correct(%) = 0.9256999999999144
+Elapsed Time: 206.404 (s)
+##### Iteration 140
+Percent actually necessary to pre-compute: 23.941000%
+PreComputed 23941, Elapsed Time: 0.303 (s)
+Cost = 0.23523799866426312, Correct(%) = 0.9213999999999148
+Elapsed Time: 207.999 (s)
+##### Iteration 141
+Percent actually necessary to pre-compute: 24.124999%
+PreComputed 24125, Elapsed Time: 0.327 (s)
+Cost = 0.23055946631843025, Correct(%) = 0.9216999999999148
+Elapsed Time: 209.498 (s)
+##### Iteration 142
+Percent actually necessary to pre-compute: 24.056000%
+PreComputed 24056, Elapsed Time: 0.264 (s)
+Cost = 0.2295582129824578, Correct(%) = 0.9251999999999144
+Elapsed Time: 211.795 (s)
+##### Iteration 143
+Percent actually necessary to pre-compute: 24.180000%
+PreComputed 24180, Elapsed Time: 0.264 (s)
+Cost = 0.2378838593421066, Correct(%) = 0.9227999999999147
+Elapsed Time: 213.268 (s)
+##### Iteration 144
+Percent actually necessary to pre-compute: 23.965999%
+PreComputed 23966, Elapsed Time: 0.31 (s)
+Cost = 0.23916090239510718, Correct(%) = 0.9243999999999145
+Elapsed Time: 214.881 (s)
+##### Iteration 145
+Percent actually necessary to pre-compute: 24.037001%
+PreComputed 24037, Elapsed Time: 0.301 (s)
+Cost = 0.23409722538432384, Correct(%) = 0.9224999999999147
+Elapsed Time: 216.441 (s)
+##### Iteration 146
+Percent actually necessary to pre-compute: 24.070001%
+PreComputed 24070, Elapsed Time: 0.267 (s)
+Cost = 0.22542365701080816, Correct(%) = 0.9256999999999144
+Elapsed Time: 217.979 (s)
+##### Iteration 147
+Percent actually necessary to pre-compute: 23.860000%
+PreComputed 23860, Elapsed Time: 0.341 (s)
+Cost = 0.22306848019410433, Correct(%) = 0.928899999999914
+Elapsed Time: 219.532 (s)
+##### Iteration 148
+Percent actually necessary to pre-compute: 23.957001%
+PreComputed 23957, Elapsed Time: 0.263 (s)
+Cost = 0.2410042733172384, Correct(%) = 0.9238999999999146
+Elapsed Time: 221.044 (s)
+##### Iteration 149
+Percent actually necessary to pre-compute: 24.208000%
+PreComputed 24208, Elapsed Time: 0.276 (s)
+Cost = 0.22601823632847132, Correct(%) = 0.9270999999999142
+Elapsed Time: 223.26 (s)
+##### Iteration 150
+Percent actually necessary to pre-compute: 24.004000%
+PreComputed 24004, Elapsed Time: 0.273 (s)
+Cost = 0.23585984477868185, Correct(%) = 0.9222999999999147
+Elapsed Time: 224.723 (s)
+##### Iteration 151
+Percent actually necessary to pre-compute: 24.093001%
+PreComputed 24093, Elapsed Time: 0.272 (s)
+Cost = 0.22571398011675736, Correct(%) = 0.9272999999999142
+Elapsed Time: 226.259 (s)
+##### Iteration 152
+Percent actually necessary to pre-compute: 24.157999%
+PreComputed 24158, Elapsed Time: 0.27 (s)
+Cost = 0.24701146184258294, Correct(%) = 0.9212999999999149
+Elapsed Time: 227.813 (s)
+##### Iteration 153
+Percent actually necessary to pre-compute: 23.935001%
+PreComputed 23935, Elapsed Time: 0.31 (s)
+Cost = 0.23992020292398794, Correct(%) = 0.9214999999999148
+Elapsed Time: 229.335 (s)
+##### Iteration 154
+Percent actually necessary to pre-compute: 23.947001%
+PreComputed 23947, Elapsed Time: 0.302 (s)
+Cost = 0.24150466689980007, Correct(%) = 0.919999999999915
+Elapsed Time: 231.003 (s)
+##### Iteration 155
+Percent actually necessary to pre-compute: 24.120000%
+PreComputed 24120, Elapsed Time: 0.287 (s)
+Cost = 0.2354563802405395, Correct(%) = 0.9253999999999144
+Elapsed Time: 232.498 (s)
+##### Iteration 156
+Percent actually necessary to pre-compute: 23.991001%
+PreComputed 23991, Elapsed Time: 0.299 (s)
+Cost = 0.23898288528789424, Correct(%) = 0.9235999999999146
+Elapsed Time: 234.304 (s)
+##### Iteration 157
+Percent actually necessary to pre-compute: 24.154000%
+PreComputed 24154, Elapsed Time: 0.332 (s)
+Cost = 0.23547091988326918, Correct(%) = 0.9249999999999144
+Elapsed Time: 236.856 (s)
+##### Iteration 158
+Percent actually necessary to pre-compute: 23.890001%
+PreComputed 23890, Elapsed Time: 0.288 (s)
+Cost = 0.21080975110010017, Correct(%) = 0.9327999999999136
+Elapsed Time: 238.558 (s)
+##### Iteration 159
+Percent actually necessary to pre-compute: 24.033999%
+PreComputed 24034, Elapsed Time: 0.361 (s)
+Cost = 0.22170310201850732, Correct(%) = 0.9281999999999141
+Elapsed Time: 240.434 (s)
+##### Iteration 160
+Percent actually necessary to pre-compute: 24.212000%
+PreComputed 24212, Elapsed Time: 0.279 (s)
+Cost = 0.23176669963021831, Correct(%) = 0.9255999999999144
+Elapsed Time: 242.037 (s)
+##### Iteration 161
+Percent actually necessary to pre-compute: 24.104001%
+PreComputed 24104, Elapsed Time: 0.329 (s)
+Cost = 0.22595332703695442, Correct(%) = 0.9280999999999141
+Elapsed Time: 243.661 (s)
+##### Iteration 162
+Percent actually necessary to pre-compute: 24.092001%
+PreComputed 24092, Elapsed Time: 0.283 (s)
+Cost = 0.22510646918019053, Correct(%) = 0.9317999999999137
+Elapsed Time: 245.252 (s)
+##### Iteration 163
+Percent actually necessary to pre-compute: 23.932000%
+PreComputed 23932, Elapsed Time: 0.279 (s)
+Cost = 0.2186316492563441, Correct(%) = 0.9278999999999141
+Elapsed Time: 246.729 (s)
+##### Iteration 164
+Percent actually necessary to pre-compute: 24.140000%
+PreComputed 24140, Elapsed Time: 0.289 (s)
+Cost = 0.233380859325793, Correct(%) = 0.9264999999999143
+Elapsed Time: 248.327 (s)
+##### Iteration 165
+Percent actually necessary to pre-compute: 24.065000%
+PreComputed 24065, Elapsed Time: 0.356 (s)
+Cost = 0.22238043743514918, Correct(%) = 0.9281999999999141
+Elapsed Time: 249.968 (s)
+##### Iteration 166
+Percent actually necessary to pre-compute: 24.027000%
+PreComputed 24027, Elapsed Time: 0.314 (s)
+Cost = 0.23049431025326705, Correct(%) = 0.9262999999999143
+Elapsed Time: 251.582 (s)
+##### Iteration 167
+Percent actually necessary to pre-compute: 23.970000%
+PreComputed 23970, Elapsed Time: 0.274 (s)
+Cost = 0.22343703938614892, Correct(%) = 0.9282999999999141
+Elapsed Time: 253.043 (s)
+##### Iteration 168
+Percent actually necessary to pre-compute: 24.044000%
+PreComputed 24044, Elapsed Time: 0.321 (s)
+Cost = 0.2228147384024927, Correct(%) = 0.9282999999999141
+Elapsed Time: 254.569 (s)
+##### Iteration 169
+Percent actually necessary to pre-compute: 24.142000%
+PreComputed 24142, Elapsed Time: 0.404 (s)
+Cost = 0.22100582613939154, Correct(%) = 0.9276999999999141
+Elapsed Time: 256.174 (s)
+##### Iteration 170
+Percent actually necessary to pre-compute: 24.071001%
+PreComputed 24071, Elapsed Time: 0.443 (s)
+Cost = 0.2145337711001651, Correct(%) = 0.9315999999999137
+Elapsed Time: 257.727 (s)
+##### Iteration 171
+Percent actually necessary to pre-compute: 24.033999%
+PreComputed 24034, Elapsed Time: 0.27 (s)
+Cost = 0.22011518255042928, Correct(%) = 0.928699999999914
+Elapsed Time: 259.146 (s)
+##### Iteration 172
+Percent actually necessary to pre-compute: 24.150001%
+PreComputed 24150, Elapsed Time: 0.264 (s)
+Cost = 0.2269791606159752, Correct(%) = 0.9272999999999142
+Elapsed Time: 260.558 (s)
+##### Iteration 173
+Percent actually necessary to pre-compute: 23.871000%
+PreComputed 23871, Elapsed Time: 0.263 (s)
+Cost = 0.2124055905658503, Correct(%) = 0.9335999999999135
+Elapsed Time: 262.127 (s)
+##### Iteration 174
+Percent actually necessary to pre-compute: 24.092001%
+PreComputed 24092, Elapsed Time: 0.297 (s)
+Cost = 0.20323874857137794, Correct(%) = 0.9331999999999135
+Elapsed Time: 263.683 (s)
+##### Iteration 175
+Percent actually necessary to pre-compute: 23.989999%
+PreComputed 23990, Elapsed Time: 0.267 (s)
+Cost = 0.2220711809960045, Correct(%) = 0.928799999999914
+Elapsed Time: 265.269 (s)
+##### Iteration 176
+Percent actually necessary to pre-compute: 23.850000%
+PreComputed 23850, Elapsed Time: 0.261 (s)
+Cost = 0.22864992564479314, Correct(%) = 0.929399999999914
+Elapsed Time: 266.72 (s)
+##### Iteration 177
+Percent actually necessary to pre-compute: 23.901001%
+PreComputed 23901, Elapsed Time: 0.259 (s)
+Cost = 0.20805034982078965, Correct(%) = 0.9327999999999136
+Elapsed Time: 268.211 (s)
+##### Iteration 178
+Percent actually necessary to pre-compute: 23.997000%
+PreComputed 23997, Elapsed Time: 0.267 (s)
+Cost = 0.21694900530312153, Correct(%) = 0.929499999999914
+Elapsed Time: 269.72 (s)
+##### Iteration 179
+Percent actually necessary to pre-compute: 23.988999%
+PreComputed 23989, Elapsed Time: 0.261 (s)
+Cost = 0.238489932458572, Correct(%) = 0.9253999999999144
+Elapsed Time: 271.274 (s)
+##### Iteration 180
+Percent actually necessary to pre-compute: 23.997000%
+PreComputed 23997, Elapsed Time: 0.281 (s)
+Cost = 0.22573908308038101, Correct(%) = 0.9247999999999145
+Elapsed Time: 272.651 (s)
+##### Iteration 181
+Percent actually necessary to pre-compute: 23.946001%
+PreComputed 23946, Elapsed Time: 0.24 (s)
+Cost = 0.2232882705934713, Correct(%) = 0.9282999999999141
+Elapsed Time: 273.965 (s)
+##### Iteration 182
+Percent actually necessary to pre-compute: 24.165000%
+PreComputed 24165, Elapsed Time: 0.246 (s)
+Cost = 0.21028060477358576, Correct(%) = 0.9301999999999139
+Elapsed Time: 275.295 (s)
+##### Iteration 183
+Percent actually necessary to pre-compute: 24.160001%
+PreComputed 24160, Elapsed Time: 0.245 (s)
+Cost = 0.21187760976993475, Correct(%) = 0.9306999999999138
+Elapsed Time: 276.682 (s)
+##### Iteration 184
+Percent actually necessary to pre-compute: 24.054000%
+PreComputed 24054, Elapsed Time: 0.244 (s)
+Cost = 0.21724551927534186, Correct(%) = 0.9296999999999139
+Elapsed Time: 278.079 (s)
+##### Iteration 185
+Percent actually necessary to pre-compute: 24.077000%
+PreComputed 24077, Elapsed Time: 0.241 (s)
+Cost = 0.2161437876283353, Correct(%) = 0.929099999999914
+Elapsed Time: 279.369 (s)
+##### Iteration 186
+Percent actually necessary to pre-compute: 23.859000%
+PreComputed 23859, Elapsed Time: 0.239 (s)
+Cost = 0.22705668125246298, Correct(%) = 0.9262999999999143
+Elapsed Time: 280.633 (s)
+##### Iteration 187
+Percent actually necessary to pre-compute: 24.264000%
+PreComputed 24264, Elapsed Time: 0.243 (s)
+Cost = 0.2138417436033318, Correct(%) = 0.9297999999999139
+Elapsed Time: 281.908 (s)
+##### Iteration 188
+Percent actually necessary to pre-compute: 24.109000%
+PreComputed 24109, Elapsed Time: 0.242 (s)
+Cost = 0.2205574418315916, Correct(%) = 0.9312999999999138
+Elapsed Time: 283.186 (s)
+##### Iteration 189
+Percent actually necessary to pre-compute: 24.044000%
+PreComputed 24044, Elapsed Time: 0.245 (s)
+Cost = 0.21097004261625862, Correct(%) = 0.9316999999999137
+Elapsed Time: 284.488 (s)
+##### Iteration 190
+Percent actually necessary to pre-compute: 23.959000%
+PreComputed 23959, Elapsed Time: 0.246 (s)
+Cost = 0.22172763234196782, Correct(%) = 0.9281999999999141
+Elapsed Time: 285.778 (s)
+##### Iteration 191
+Percent actually necessary to pre-compute: 24.161001%
+PreComputed 24161, Elapsed Time: 0.246 (s)
+Cost = 0.21813226269239522, Correct(%) = 0.9295999999999139
+Elapsed Time: 287.078 (s)
+##### Iteration 192
+Percent actually necessary to pre-compute: 24.016000%
+PreComputed 24016, Elapsed Time: 0.244 (s)
+Cost = 0.22650616042283045, Correct(%) = 0.9281999999999141
+Elapsed Time: 288.387 (s)
+##### Iteration 193
+Percent actually necessary to pre-compute: 23.901001%
+PreComputed 23901, Elapsed Time: 0.247 (s)
+Cost = 0.2116933914611208, Correct(%) = 0.9318999999999137
+Elapsed Time: 289.698 (s)
+##### Iteration 194
+Percent actually necessary to pre-compute: 23.943000%
+PreComputed 23943, Elapsed Time: 0.244 (s)
+Cost = 0.21442066839254997, Correct(%) = 0.9303999999999139
+Elapsed Time: 290.998 (s)
+##### Iteration 195
+Percent actually necessary to pre-compute: 24.142000%
+PreComputed 24142, Elapsed Time: 0.249 (s)
+Cost = 0.21190751138439662, Correct(%) = 0.9320999999999137
+Elapsed Time: 292.329 (s)
+##### Iteration 196
+Percent actually necessary to pre-compute: 24.018000%
+PreComputed 24018, Elapsed Time: 0.25 (s)
+Cost = 0.2182247849846666, Correct(%) = 0.9283999999999141
+Elapsed Time: 293.78 (s)
+##### Iteration 197
+Percent actually necessary to pre-compute: 24.198000%
+PreComputed 24198, Elapsed Time: 0.249 (s)
+Cost = 0.20811214012560686, Correct(%) = 0.9322999999999136
+Elapsed Time: 295.116 (s)
+##### Iteration 198
+Percent actually necessary to pre-compute: 24.135000%
+PreComputed 24135, Elapsed Time: 0.256 (s)
+Cost = 0.21262074876862547, Correct(%) = 0.9305999999999138
+Elapsed Time: 296.5 (s)
+##### Iteration 199
+Percent actually necessary to pre-compute: 24.168000%
+PreComputed 24168, Elapsed Time: 0.26 (s)
+Cost = 0.2162350858657611, Correct(%) = 0.9325999999999136
+Elapsed Time: 297.882 (s)
+Loading depparse model file: /u/nayans/NLP/output/set1/2000_model ... 
+PreComputed 100000, Elapsed Time: 1.149 (s)
+Initializing dependency parser ... done [1.6 sec].
+Test File: /u/nayans/NLP/data/brown_test.conllx
+OOV Words: 0 / 47791 = 0.00%
+UAS = 79.5064
+LAS = 74.7852
+DependencyParser parsed 47791 words in 2421 sentences in 3.3s at 14691.4 w/s, 744.2 sent/s.
+74.78517722878625
