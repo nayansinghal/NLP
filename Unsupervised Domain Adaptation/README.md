@@ -21,11 +21,11 @@ Creating a large amount of annotated data for training the parser is very expens
 2. Train the model:
 	
 	```bash
-	java UnsupervisedDomainAdaption seed_train_path seed_size self_training_path self_training_size seed_test_path self_training_test_path output_dir/filename
+	java UnsupervisedDomainAdaption seed/train/path seed/size self/training/path self/training/size seed/test/path self/training/test/path embed/path/ output/dir/filename
 	```
 
-	eg.g
-	java UnsupervisedDomainAdaption data/wsj_train.conllx  10000 data/brown_train.conllx 1000 data/wsj_test.conllx data/brown_test.conllx 
+	e.g.
+	java UnsupervisedDomainAdaption data/wsj_train.conllx  10000 data/brown_train.conllx 1000 data/wsj_test.conllx data/brown_test.conllx ../data/en-cw.txt output/
 
 # Results
-Trace folder contains all the trace file i.e. performance of all different models on Wall Street Journal dataset.
+Trace folder contains the trace files of all the experiments perform.
