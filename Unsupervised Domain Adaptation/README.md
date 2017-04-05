@@ -11,14 +11,18 @@ Creating a large amount of annotated data for training the parser is very expens
 
 1. For preprocessing of the brown data:
 	
+	```bash
 	java processBrown /path/to/brown/dataset/dir /path/to/output/dir
+	```
 	
 	e.g.
 	java processBrown preprocess/brown-conllx/ data/
-
+	
 2. Train the model:
 	
+	```bash
 	java UnsupervisedDomainAdaption seed_train_path seed_size self_training_path self_training_size seed_test_path self_training_test_path output_dir/filename
+	```
 
 	eg.g
 	java UnsupervisedDomainAdaption data/wsj_train.conllx  10000 data/brown_train.conllx 1000 data/wsj_test.conllx data/brown_test.conllx 
